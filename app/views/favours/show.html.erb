@@ -1,1 +1,13 @@
-show.html.erb
+<div class="container">
+  <h1><%= @favour.name %></h1>
+
+  <p><%= @favour.description %></p>
+  <p><%= @favour.location %></p>
+  <p class = "price"><%= @favour.price %> CHF</p>
+
+  <%= link_to "Back", favours_path, class: 'btn btn-dark btn-sm text-white' %>
+
+
+  <h4><strong> Accept <%= @favour.name %></strong></h4>
+  <%= render 'contracts/new', favour: @favour, contract: @contract %>
+</div>
