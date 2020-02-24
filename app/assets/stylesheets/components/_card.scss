@@ -1,9 +1,23 @@
 .card-favour {
-  border: 1px solid, black;
+  border: 1px solid #6D6F70;
   border-radius: 5px;
 }
 
-.card-favour .card-header {
+.card-favour .card-body {
   background-color: white;
   text-decoration: none;
+  color: black;
+
+  &:hover {
+    color: #6D6F70;
+  }
+}
+
+.card-body a {
+  text-decoration: none;
+}
+
+.map-container {
+  border-radius: 5px;
+  border: 1px solid #6D6F70;
 }
