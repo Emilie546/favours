@@ -1,22 +1,22 @@
 <div class="container">
   <h1>Job offers</h1> <br><br>
   <div class="row">
-    <div class="col-8 cards">
+    <div class="col-7 cards">
       <% @favours.each do |f| %>
         <%= link_to favour_path(f) do %>
           <div class="card-favour">
-            <h3 class="card-header"><%= f.name %></h3>
             <div class="card-body">
-              <p><%= f.description %></p>
-              <p><%= f.start_time %></p>
-              <p> <small><%= f.price %> CHF</small></p>
+              <h3 class="card-title"><%= f.name %></h3>
+              <p class="card-text"><%= f.description %></p>
+              <p class="card-text"><%= f.start_time %></p>
+              <p class="card-text"><small><%= f.price %> CHF</small></p>
             </div>
           </div>
         <% end %>
         <br>
       <% end %>
     </div>
-    <div class="col-4 map-container">
+    <div class="col-5 map-container">
       <p>Ceci est une carte</p>
     </div>
   </div>
