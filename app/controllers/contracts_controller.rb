@@ -1,33 +1,16 @@
 class ContractsController < ApplicationController
 
   def index
-    @contracts = Contract.all
-  end
-
-  def show
-    @contract = Contract.find(params[:id])
+    @contracts = Contract.where(user: current_user)
   end
 
   def new
-    @contract = Contract.new(params[:favour_id])
-    @contract = @favour.contract.build
+    @favour = Favour.find(params[:favour_id])
   end
 
   def create
-    @contract = Contract.new(contract_params)
     @favour = Favour.find(params[:favour_id])
-    @contract.user = current_user
-    @contract.favour = @favour
-    if @contract.save
-      redirect_to contracts_path
-    else
-      render 'favours/show'
-    end
-  end
-
-  private
-
-  def contract_params
-    params.require(:contract).permit(:cancelled_at)
+    Contract.create(user: current_user, favour: @favour)
+    redirect_to contracts_path
   end
 end
