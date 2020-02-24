@@ -1,0 +1,10 @@
+<% @favours.each do |f| %>
+  <%= link_to favour_path(f) do %>
+    <h3><%= f.name %></h3>
+    <p><%= f.description %></p>
+    <p><%= f.start_time %></p>
+    <p><%= f.end_time %></p>
+    <p><%= f.location %></p>
+    <p><%= f.price %> CHF</small></p>
+  <% end %>
+<% end %>
