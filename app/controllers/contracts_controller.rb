@@ -12,7 +12,4 @@ class ContractsController < ApplicationController
     Contract.create(user: current_user, favour: @favour)
     redirect_to contracts_path
   end
-
-  def destroy
-  end
 end
