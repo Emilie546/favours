@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="intro">
+    <h3>My favours</h3>
+  </div>
+  <div class="status">
+    <% @favours.each do |f| %>
+      <div class="card">
+        <div class="card-body">
+          <p class="card-text">Task: <%= f.name %></p>
+          <p class="card-text"><%= f.description %></p>
+          <p class="card-text"><%= f.location %></p>
+          <p class="card-text"><%= f.price %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
