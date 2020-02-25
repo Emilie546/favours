@@ -4,7 +4,7 @@ class FavoursController < ApplicationController
   def index
     # @favours = Favour.all
 
-    @favours = Favour.geocoded #returns flats with coordinates
+    @favours = Favour.geocoded.left_outer_joins(:contract).where("contracts.id IS NULL") #returns flats with coordinates
 
     @markers = @favours.map do |favour|
       {

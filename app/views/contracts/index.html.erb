@@ -4,15 +4,14 @@
   </div>
   <div class="status">
     <% @contracts.each do |c| %>
-      <%= link_to favour_path(c) do %>
-        <div class="card">
-          <div class="card-body">
-            <p class="card-text">Name of the favour: <%= c.name %></p>
-            <p class="card-text">Start time : <%= c.start_time %></p>
-            <p class="card-text">End time : <%= c.end_time %></p>
-          </div>
+      <div class="card">
+        <div class="card-body">
+          <p class="card-text">Task: <%= c.favour.name %></p>
+          <p class="card-text"><%= c.favour.description %></p>
+          <p class="card-text"><%= c.favour.location %></p>
         </div>
-      <% end %>
+        <%= link_to "Annuler la mission", favour_contract_path(c.favour, c), method: :delete %>
+      </div>
     <% end %>
   </div>
 </div>
