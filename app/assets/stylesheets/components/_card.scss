@@ -1,11 +1,18 @@
-.card-favour {
-  border: 1px solid #6D6F70;
-  border-radius: 5px;
+.intro {
+  border-bottom: 1px solid #6D6F70;
+  margin-top: 16px;
+  line-height: 2;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
 }
 
-.card-favour .card-body {
+.card-favour {
+  border: 1px solid #E6E7E8;
+  box-shadow: 5px 2px 2px #E6E7E8;
+  display: flex;
+  justify-content: flex-end;
   background-color: white;
-  text-decoration: none;
   color: black;
 
   &:hover {
@@ -13,11 +20,14 @@
   }
 }
 
-.card-body a {
+.cards a {
   text-decoration: none;
 }
 
 .map-container {
   border-radius: 5px;
   border: 1px solid #6D6F70;
+  max-height: 650px;
+  position: sticky;
+  top: 0;
 }

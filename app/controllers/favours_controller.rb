@@ -2,7 +2,17 @@ class FavoursController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @favours = Favour.left_outer_joins(:contract).where("contracts.id IS NULL")
+    # @favours = Favour.all
+
+    @favours = Favour.geocoded.left_outer_joins(:contract).where("contracts.id IS NULL") #returns flats with coordinates
+
+    @markers = @favours.map do |favour|
+      {
+        lat: favour.latitude,
+        lng: favour.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { favour: favour })
+      }
+    end
   end
 
   def show
