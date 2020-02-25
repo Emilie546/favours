@@ -11,6 +11,8 @@
           <p class="card-text"><%= f.location %></p>
           <p class="card-text"><%= f.price %></p>
         </div>
+        <%= link_to "Delete my favours", favour_path(f), method: :delete %>
+        <%= link_to "Edit my favours", edit_favour_path(f) %>
       </div>
     <% end %>
   </div>

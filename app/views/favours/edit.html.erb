@@ -1,0 +1,33 @@
+<div class = container>
+  <div class="form-palace">
+    <h3>New Favour</h3><br>
+      <%= simple_form_for @favour do |f| %>
+        <div class="form-group">
+          <%= f.input :name, class: 'form-control', placeholder: 'Enter the name of your palace' %>
+        </div>
+        <div class="form-group">
+          <%= f.input :description, class: 'form-control', placeholder: 'Enter a description' %>
+        </div>
+        <div class="form-group">
+          <%= f.association :category, class: 'form-control', placeholder: 'Enter a category' %>
+        </div>
+        <div class="form-group">
+          <%= f.input :location, class: 'form-control', placeholder: 'Enter the location' %>
+        </div>
+        <div class="form-group">
+          <%= f.input :price, class: 'form-control', placeholder: 'Price' %>
+        </div>
+        <div class="form-group">
+          <%= f.input :start_time, class: 'form-control', placeholder: 'Start time' %>
+        </div>
+        <div class="form-group">
+          <%= f.input :end_time, class: 'form-control', placeholder: 'End time' %>
+        </div>
+        <div class="mt-4 flex-btns">
+          <%= f.submit 'Edit my favour', class: 'btn btn-dark btn-sm text-white px-4 ' %>
+          <%= link_to "Home page", root_path, class: 'btn btn-dark btn-sm text-white px-4 mx-5' %>
+        </div>
+      <% end %>
+      </div>
+  </div>
+</div>

@@ -2,9 +2,7 @@ class FavoursController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    # @favours = Favour.all
-
-    @favours = Favour.geocoded.left_outer_joins(:contract).where("contracts.id IS NULL") #returns flats with coordinates
+  @favours = Favour.geocoded.left_outer_joins(:contract).where("contracts.id IS NULL")
 
     @markers = @favours.map do |favour|
       {
@@ -43,13 +41,13 @@ class FavoursController < ApplicationController
   def update
     @favour = Favour.find(params[:id])
     @favour.update(favour_params)
-    redirect_to favour_path(@favour)
+    redirect_to my_favours_path
   end
 
   def destroy
     @favour = Favour.find(params[:id])
     @favour.destroy
-    redirect_to favours_path
+    redirect_to my_favours_path
   end
 
   private
