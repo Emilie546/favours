@@ -18,7 +18,11 @@ class FavoursController < ApplicationController
   end
 
   def show
-    @favour = Favour.find(params[:id])
+    @favour = Favour.geocoded.find(params[:id])
+    @marker = {
+      lat: @favour.latitude,
+      lng: @favour.longitude
+    }
   end
 
   def new
