@@ -5,6 +5,10 @@ class FavoursController < ApplicationController
     @favours = Favour.left_outer_joins(:contract).where("contracts.id IS NULL")
   end
 
+  def myfavours
+    @favours = Favour.where(user: current_user)
+  end
+
   def show
     @favour = Favour.find(params[:id])
   end
@@ -14,12 +18,9 @@ class FavoursController < ApplicationController
   end
 
   def create
-    #@favour = Favour.new(favour_params)
-    #@favour.user = current_user
-
     @favour = current_user.favours.build(favour_params)
     if @favour.save
-      redirect_to favour_path(@favour)
+      redirect_to root_path
     else
       render 'new'
     end
@@ -44,6 +45,6 @@ class FavoursController < ApplicationController
   private
 
   def favour_params
-    params.require(:favour).permit(:name, :description, :price, :location, :start_time, :end_time)
+    params.require(:favour).permit(:name, :description, :category_id, :price, :location, :start_time, :end_time)
   end
 end
