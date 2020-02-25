@@ -2,7 +2,7 @@ class FavoursController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @favours = Favour.all
+    @favours = Favour.left_outer_joins(:contract).where("contracts.id IS NULL")
   end
 
   def show
