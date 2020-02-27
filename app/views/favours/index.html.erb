@@ -32,7 +32,7 @@
               </div>
               <div class="card-body">
                 <p class="card-text"><%= f.start_time %></p>
-                <p class="card-text"><small><%= f.price %> CHF</small></p>
+                <p class="card-text"><small><%= humanized_money_with_symbol(f.price) %></small></p>
               </div>
             </div>
           </div>

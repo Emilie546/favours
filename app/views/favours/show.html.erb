@@ -5,7 +5,7 @@
 
       <p><%= @favour.description %></p>
       <p><%= @favour.location %></p>
-      <p class = "price"><%= @favour.price %> CHF</p>
+      <p class = "price"><%= humanized_money_with_symbol(@favour.price) %></p>
 
       <%= link_to "Back", favours_path, class: 'btn btn-dark btn-sm text-white' %>
 

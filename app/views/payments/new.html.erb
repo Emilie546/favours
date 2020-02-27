@@ -1,0 +1,10 @@
+<div class="text-center">
+  <%= simple_form_for [@favour, @payment] do |f| %>
+    <%= f.input :name, placeholder: 'Nom' %>
+    <%= f.input :card_number, placeholder: 'Numéro de la carte' %>
+    <%= f.input :cvc, placeholder: 'Code à trois chiffres' %>
+    <%= f.input :exp_month, collection: ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'], prompt: 'Mois' %>
+    <%= f.input :exp_year, collection: Time.zone.now.year..Time.zone.now.year + 8, prompt: 'Année' %>
+    <%= f.submit 'Create my favour', class: 'btn btn-dark btn-sm text-white px-4 ' %>
+  <% end %>
+</div>
