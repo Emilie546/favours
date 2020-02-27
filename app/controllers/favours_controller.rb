@@ -2,7 +2,7 @@ class FavoursController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-  @favours = Favour.geocoded.left_outer_joins(:contract).where("contracts.id IS NULL")
+    @favours = Favour.geocoded.left_outer_joins(:contract).where("contracts.id IS NULL")
 
     @markers = @favours.map do |favour|
       {
@@ -32,7 +32,7 @@ class FavoursController < ApplicationController
   def create
     @favour = current_user.favours.build(favour_params)
     if @favour.save
-      redirect_to root_path
+      redirect_to new_favour_payment_path(@favour)
     else
       render 'new'
     end
@@ -57,6 +57,6 @@ class FavoursController < ApplicationController
   private
 
   def favour_params
-    params.require(:favour).permit(:name, :description, :category_id, :price, :location, :start_time, :end_time)
+    params.require(:favour).permit(:name, :description, :category_id, :price_cents, :location, :start_time, :end_time)
   end
 end
