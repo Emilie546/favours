@@ -15,11 +15,11 @@ lawn = Category.create!(name: 'lawn-mowing')
 car = Category.create!(name: 'ride-sharing')
 
 puts 'Creating users...'
-user = User.create!(email: Faker::Internet.email, password: Faker::Internet.password(min_length: 8), first_name: 'Emilie', last_name: 'Keller')
-user_1 = User.create!(email: Faker::Internet.email, password: Faker::Internet.password(min_length: 8), first_name: 'Georgina', last_name: 'Morin')
-user_2 = User.create!(email: Faker::Internet.email, password: Faker::Internet.password(min_length: 8), first_name: 'Hugo', last_name: 'Mori')
-user_3 = User.create!(email: Faker::Internet.email, password: Faker::Internet.password(min_length: 8), first_name: 'Maeva', last_name: 'Blanc')
-user_4 = User.create!(email: Faker::Internet.email, password: Faker::Internet.password(min_length: 8), first_name: 'Elise', last_name: 'Dubois')
+user = User.create!(email: Faker::Internet.email, password: Faker::Internet.password(min_length: 8), first_name: 'Emilie', last_name: 'Keller', photo: 'photo_maeva.jpg')
+user_1 = User.create!(email: Faker::Internet.email, password: Faker::Internet.password(min_length: 8), first_name: 'Georgina', last_name: 'Morin', photo: 'Photo_Georgina')
+user_2 = User.create!(email: Faker::Internet.email, password: Faker::Internet.password(min_length: 8), first_name: 'Hugo', last_name: 'Mori', photo: 'photo_maeva.jpg')
+user_3 = User.create!(email: Faker::Internet.email, password: Faker::Internet.password(min_length: 8), first_name: 'Maeva', last_name: 'Blanc', photo: 'photo_maeva.jpg')
+user_4 = User.create!(email: Faker::Internet.email, password: Faker::Internet.password(min_length: 8), first_name: 'Elise', last_name: 'Dubois', photo: 'Photo_Georgina')
 
 puts 'Creating favours...'
 Favour.create!(name: 'dog-walk', description: 'Golden retriever needs a walk', category: dog_walk, user: user, start_time: Faker::Time.forward, end_time: Faker::Time.forward,  location: 'Chemin du Creux de Corsy 75, 1093 La Conversion', price: Faker::Number.number(digits: 2))
