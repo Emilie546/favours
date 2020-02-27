@@ -9,7 +9,7 @@ class User < ApplicationRecord
   has_one_attached :profile_picture
   has_many :payment
 
-
+  # Ce sont les infos obligatoires pour créer un new User (compte)
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :email, uniqueness: true, presence: true

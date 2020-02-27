@@ -2,7 +2,8 @@ class FavoursController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @favours = Favour.geocoded.left_outer_joins(:contract).where("contracts.id IS NULL")
+    # Vue de toute les Favours sur le marcher, visible de tout le monde... (C'est notre pages d'accueil)
+    @favours = Favour.geocoded.left_outer_joins(:contract).where("contracts.id IS NULL") # .left_outer_joins(:contract).where("contracts.id IS NULL"), permet d'afficher toute les favours qui non pas de contracts
 
     @markers = @favours.map do |favour|
       {
@@ -14,6 +15,7 @@ class FavoursController < ApplicationController
   end
 
   def myfavours
+    # Nouvelle pages générer pour voir uniquement nos Favours créer, avec possibilité d'edit et supprimer
     @favours = Favour.where(user: current_user)
   end
 
@@ -31,6 +33,7 @@ class FavoursController < ApplicationController
   end
 
   def create
+    # Creation d'une nouvelle Favour qui appartient à un User, si valide alors renvoie vers pages de paiement
     @favour = current_user.favours.build(favour_params)
     if @favour.save
       redirect_to new_favour_payment_path(@favour)
@@ -44,12 +47,14 @@ class FavoursController < ApplicationController
   end
 
   def update
+    # Edit des Favour, possible uniquement par celui qui l'a créer
     @favour = Favour.find(params[:id])
     @favour.update(favour_params)
     redirect_to my_favours_path
   end
 
   def destroy
+    # Possibilité de supprimer ses Favours
     @favour = Favour.find(params[:id])
     @favour.destroy
     redirect_to my_favours_path

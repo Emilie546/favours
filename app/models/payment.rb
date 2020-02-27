@@ -4,7 +4,7 @@ class Payment < ApplicationRecord
   belongs_to :user
   belongs_to :favour
 
-    # Attr_accessor
+  # Ce sont les infos obligatoires pour effectuer un new paiement
   validates :name, presence: true
   validates :card_number, presence: true
   validates :exp_month, presence: true
