@@ -9,7 +9,7 @@
           <p class="card-text">Task: <%= f.name %></p>
           <p class="card-text"><%= f.description %></p>
           <p class="card-text"><%= f.location %></p>
-          <p class="card-text"><%= f.price %></p>
+          <p class="card-text"><%= humanized_money_with_symbol(f.price) %></p>
         </div>
         <%= link_to "Delete my favours", favour_path(f), method: :delete %>
         <%= link_to "Edit my favours", edit_favour_path(f) %>

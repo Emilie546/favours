@@ -3,7 +3,6 @@
     <h1 class="text-center mt-3"><%= @favour.name %></h1>
     <%= link_to "Back", favours_path, class: 'btn btn-outline-primary text-left' %>
   </div>
-
   <div class="flex-display">
     <div class="favour-show-card mr-3">
       <div class="row">
@@ -13,7 +12,7 @@
           <h5>Accept <%= @favour.name %></h5>
         </div>
         <div class="col-6">
-          <p class = "price text-right"><%= @favour.price %> CHF</p>
+          <p class = "price text-right"><%= humanized_money_with_symbol(@favour.price) %></p>
           <%= render 'contracts/new', favour: @favour, contract: @contract %>
         </div>
       </div>
@@ -30,7 +29,8 @@
         id="map"
         style="width: 100%;
         height: 500px;"
-        data-markers="<%= @marker.to_json %>"
+        data-page="show"
+        data-markers="[<%= @marker.to_json %>]"
         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
       ></div>
   </div>
