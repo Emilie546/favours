@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_many :contracts, dependent: :destroy
   has_many :favours, dependent: :destroy
+  has_one_attached :profile_picture
   has_many :payment
 
   # Ce sont les infos obligatoires pour créer un new User (compte)
@@ -13,3 +14,4 @@ class User < ApplicationRecord
   validates :last_name, presence: true
   validates :email, uniqueness: true, presence: true
 end
+

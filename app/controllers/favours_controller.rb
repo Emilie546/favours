@@ -25,6 +25,7 @@ class FavoursController < ApplicationController
       lat: @favour.latitude,
       lng: @favour.longitude
     }
+    # @user = User.where(user: @favour.user_id)
   end
 
   def new

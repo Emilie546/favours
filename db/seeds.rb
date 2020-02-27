@@ -15,11 +15,11 @@ lawn = Category.create!(name: 'lawn-mowing')
 car = Category.create!(name: 'ride-sharing')
 
 puts 'Creating users...'
-user = User.create!(first_name: 'hugo', last_name: 'Portmann', email: Faker::Internet.email, password: Faker::Internet.password(min_length: 8))
-user_1 = User.create!(first_name: 'loulou', last_name: 'Willemann',email: Faker::Internet.email, password: Faker::Internet.password(min_length: 8))
-user_2 = User.create!(first_name: 'toto', last_name: 'Rosenblatt',email: Faker::Internet.email, password: Faker::Internet.password(min_length: 8))
-user_3 = User.create!(first_name: 'gautier', last_name: 'Troxler',email: Faker::Internet.email, password: Faker::Internet.password(min_length: 8))
-user_4 = User.create!(first_name: 'gogo', last_name: 'Vagner',email: Faker::Internet.email, password: Faker::Internet.password(min_length: 8))
+user = User.create!(email: Faker::Internet.email, password: Faker::Internet.password(min_length: 8), first_name: 'Emilie', last_name: 'Keller', profile_picture: 'photo_maeva.jpg')
+user_1 = User.create!(email: Faker::Internet.email, password: Faker::Internet.password(min_length: 8), first_name: 'Georgina', last_name: 'Morin', profile_picture: 'Photo_Georgina')
+user_2 = User.create!(email: Faker::Internet.email, password: Faker::Internet.password(min_length: 8), first_name: 'Hugo', last_name: 'Mori', profile_picture: 'photo_maeva.jpg')
+user_3 = User.create!(email: Faker::Internet.email, password: Faker::Internet.password(min_length: 8), first_name: 'Maeva', last_name: 'Blanc', profile_picture: 'photo_maeva.jpg')
+user_4 = User.create!(email: Faker::Internet.email, password: Faker::Internet.password(min_length: 8), first_name: 'Elise', last_name: 'Dubois', profile_picture: 'Photo_Georgina')
 
 puts 'Creating favours...'
 Favour.create!(name: 'dog-walk', description: 'Golden retriever needs a walk', category: dog_walk, user: user, start_time: Faker::Time.forward, end_time: Faker::Time.forward,  location: 'Chemin du Creux de Corsy 75, 1093 La Conversion', price_cents: 7000)

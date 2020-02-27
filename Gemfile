@@ -17,10 +17,12 @@ gem 'uglifier'
 gem 'webpacker'
 gem 'faker'
 gem 'geocoder'
+gem 'cloudinary', '~> 1.12.0'
 gem 'money-rails'
 gem 'stripe'
 gem 'better_errors'
 gem 'binding_of_caller'
+
 
 group :development do
   gem 'web-console', '>= 3.3.0'
