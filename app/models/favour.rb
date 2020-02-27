@@ -5,6 +5,7 @@ class Favour < ApplicationRecord
   has_many :payment
   monetize :price_cents
 
+  # Ce sont les infos obligatoires pour créer une new Favour
   validates :name, uniqueness: true, presence: true
   validates :description, presence: true
   validates :price_cents,  numericality: { only_integer: true }

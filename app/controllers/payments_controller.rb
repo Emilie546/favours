@@ -1,4 +1,5 @@
 class PaymentsController < ApplicationController
+
   def new
     @favour = Favour.find(params[:favour_id])
     @payment = Payment.new()
@@ -9,7 +10,7 @@ class PaymentsController < ApplicationController
     @payment = Payment.new(payment_params)
     @favour.valid?
 
-    # Generate token for credit card
+    # Génerer un token pour les cartes de crédit envoyer à Stripe
     token = Stripe::Token.create(
       card: {
         number: @payment.card_number,
@@ -20,17 +21,21 @@ class PaymentsController < ApplicationController
       },
     )
 
+    # Création de la charge avec le montant, l'email etc... du client pour la commande envoyer à Stripe
     Stripe::Charge.create({
       amount: @favour.price_cents,
       currency: 'chf',
       source: token,
-      description: 'My First Test Charge (created for API docs)',
+      description: @favour.name,
+      receipt_email: current_user.email
     })
+
     redirect_to root_path
   end
 
   private
 
+  # Params du formulaire de paiement
   def payment_params
     params.require(:payment).permit(:card_number, :exp_month, :exp_year, :name, :cvc)
   end
