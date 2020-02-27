@@ -39,7 +39,6 @@ const succesPosition = (markers, map, pos, mapMarkers) => {
     m.remove();
   });
   mapMarkers = [];
-  console.log(markers)
   addMarkersToMap(map,markers,mapMarkers);
   addMypositionToMap(map, marker_user, mapMarkers);
 
