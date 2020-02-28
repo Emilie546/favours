@@ -7,16 +7,18 @@
   margin-bottom: 16px;
 }
 
-.card-favour {
+.card-index {
   border: 1px solid #E6E7E8;
   box-shadow: 5px 2px 2px #E6E7E8;
-  display: flex;
-  justify-content: flex-end;
   background-color: white;
   color: black;
+  margin-right: 20px;
+  margin-bottom: 12px;
+  max-height: 100px;
+  padding: 12px;
 
   &:hover {
-    color: #6D6F70;
+    border: 2px solid #3FB1CE;
   }
 }
 
