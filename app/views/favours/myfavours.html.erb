@@ -9,11 +9,15 @@
           <p class="card-text">Task: <%= f.name %></p>
           <p class="card-text"><%= f.description %></p>
           <p class="card-text"><%= f.location %></p>
-          <p class="card-text"><%= humanized_money_with_symbol(f.price) %></p>
+          <p class="card-text"><%= humanized_money_with_symbol(f.price * 100) %></p>
         </div>
-        <%= link_to "Delete my favours", favour_path(f), method: :delete %>
-        <%= link_to "Edit my favours", edit_favour_path(f) %>
+        <div class="mt-4 flex-btns">
+          <%= link_to "Edit", edit_favour_path(f), class: 'btn btn-outline-primary ml-5 mr-5 px-2 mb-4' %>
+          <%= link_to "Delete", favour_path(f), method: :delete, class: 'btn btn-outline-primary ml-5 mr-5 px-2 mb-4' %>
+        </div>
       </div>
     <% end %>
   </div>
 </div>
+
+

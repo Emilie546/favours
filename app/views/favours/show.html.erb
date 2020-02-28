@@ -12,7 +12,7 @@
           <h5>Accept <%= @favour.name %></h5>
         </div>
         <div class="col-6">
-          <p class = "price text-right"><%= humanized_money_with_symbol(@favour.price) %></p>
+          <p class = "price text-right"><%= humanized_money_with_symbol(@favour.price * 100) %></p>
           <%= render 'contracts/new', favour: @favour, contract: @contract %>
         </div>
       </div>
