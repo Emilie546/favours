@@ -3,7 +3,10 @@ class FavoursController < ApplicationController
 
   def index
     # Vue de toute les Favours sur le marcher, visible de tout le monde... (C'est notre pages d'accueil)
+    @categories = Category.all
     @favours = Favour.geocoded.left_outer_joins(:contract).where("contracts.id IS NULL") # .left_outer_joins(:contract).where("contracts.id IS NULL"), permet d'afficher toute les favours qui non pas de contracts
+    @favours = @favours.where(category_id: params[:category]) if params[:category].present?
+
 
     @markers = @favours.map do |favour|
       {
@@ -12,6 +15,10 @@ class FavoursController < ApplicationController
         infoWindow: render_to_string(partial: "info_window", locals: { favour: favour })
       }
     end
+  end
+
+  def filter_categ
+    @favours = Favour.where(@favours.category == @category)
   end
 
   def myfavours
