@@ -23,7 +23,7 @@ class PaymentsController < ApplicationController
 
     # Création de la charge avec le montant, l'email etc... du client pour la commande envoyer à Stripe
     Stripe::Charge.create({
-      amount: @favour.price_cents,
+      amount: @favour.price_cents * 100,
       currency: 'chf',
       source: token,
       description: @favour.name,
