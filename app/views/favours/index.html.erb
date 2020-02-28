@@ -33,7 +33,7 @@
               <h5><%= f.name %></h5>
             </div>
             <div class="col-6 text-right">
-              <p><%= humanized_money_with_symbol(f.price) %></p>
+              <p><%= humanized_money_with_symbol(f.price * 100) %></p>
               <p><%= f.start_time.strftime("%d.%M.%Y") %></p>
             </div>
           </div>
