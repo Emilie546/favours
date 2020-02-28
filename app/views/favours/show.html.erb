@@ -19,8 +19,20 @@
     </div>
 
     <div class="user-favour-card ml-3">
-      <h5>User Card</h5>
+      <div class="row">
+        <div class="col-6">
+          <h5><%= @user.first_name %></h5>
+          <p><%= @user.last_name %></p>
+          <p><%= @user.email %></p>
+        </div>
+        <div class="col-6 text-right">
+          <%= profile_picture(@user) %>
+          <p><%= @user.location %></p>
+          <p><%= @user.phone_number %></p>
+        </div>
+      </div>
     </div>
+
   </div>
 
   <div class="map-show-card">

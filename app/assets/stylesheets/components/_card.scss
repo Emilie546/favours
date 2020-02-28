@@ -40,7 +40,7 @@
 .favour-show-card {
   border: 1px solid #E6E7E8;
   margin-top: 24px;
-  min-width: 65%;
+  min-width: 55%;
   padding: 12px;
   box-shadow: 5px 2px 2px #E6E7E8;
 }
@@ -48,10 +48,24 @@
 .user-favour-card {
   border: 1px solid #E6E7E8;
   margin-top: 24px;
-  min-width: 25%;
+  min-width: 45%;
   padding: 12px;
   box-shadow: 5px 2px 2px #E6E7E8;
 }
+
+// .user-flex {
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: flex-end;
+//   position: relative;
+// }
+
+// .user-flex .card-show-user-pic {
+//   position: absolute;
+//   right: 16px;
+//   bottom: -20px;
+//   width: 40px;
+// }
 
 .map-show-card {
   border: 1px solid #E6E7E8;
@@ -73,3 +87,5 @@
 .form-white {
   background-color: white;
 }
+
+
