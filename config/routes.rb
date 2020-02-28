@@ -12,5 +12,9 @@ Rails.application.routes.draw do
     resources :payments, only: [:new, :create]
   end
 
+  resources :favours do
+    resources :categories, only: [:index]
+  end
+
   get 'my_favours', to: 'favours#myfavours'
 end
