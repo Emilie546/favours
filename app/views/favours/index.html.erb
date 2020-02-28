@@ -1,8 +1,7 @@
-<div class="banner w-100" style="background-color: #4EBFDB;">
+<div class="banner w-100" style="background-image: url(https://images.unsplash.com/photo-1566041510394-cf7c8fe21800?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2434&q=80);">
   <div class="row">
     <div style="margin-left: auto; margin-right: auto;">
-      <%= image_tag "Favours-logo-fille.png", alt: "alttext",class: "image-clin" %>
-      <button class="btn btn-outline-primary">Join us</button>
+      <%= image_tag "Favours_rond.png", alt: "alttext",class: "image-clin" %>
     </div>
   </div>
 </div>
@@ -28,21 +27,21 @@
     <div class="col-7 cards">
       <% @favours.each do |f| %>
         <%= link_to favour_path(f) do %>
-          <div class="card-favour">
-            <div class="card-body">
-              <div class="card-right">
-                <h5 class="card-title"><%= f.name %></h5>
-              </div>
-              <div class="card-body">
-                <p class="card-text"><%= f.start_time.strftime("%d.%M.%Y") %></p>
-                <p class="card-text"><small><%= humanized_money_with_symbol(f.price) %></small></p>
-              </div>
+        <div class="card-index">
+          <div class="row">
+            <div class="col-6">
+              <h5><%= f.name %></h5>
+            </div>
+            <div class="col-6 text-right">
+              <p><%= humanized_money_with_symbol(f.price) %></p>
+              <p><%= f.start_time.strftime("%d.%M.%Y") %></p>
             </div>
           </div>
+        </div>
         <% end %>
-        <br>
       <% end %>
     </div>
+
     <div class="col-5 pl-0 map-container"
       id="map"
       style=" position: sticky;
