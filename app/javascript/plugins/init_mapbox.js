@@ -35,14 +35,17 @@ const succesPosition = (markers, map, pos, mapMarkers) => {
   const lat = pos.coords.latitude;
   const marker_user = {lng: lng, lat: lat};
 
+
+  console.log(mapMarkers)
   mapMarkers.forEach((m) => {
     m.remove();
   });
-  mapMarkers = [];
+
   addMarkersToMap(map,markers,mapMarkers);
   addMypositionToMap(map, marker_user, mapMarkers);
 
   fitMapToMarkers(map, markers.concat([marker_user]));
+
 };
 
 const addMypositionToMap = (map, marker, mapMarkers) => {
