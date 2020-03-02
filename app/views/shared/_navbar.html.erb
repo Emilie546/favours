@@ -9,16 +9,16 @@
 
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
+    <ul class="navbar-nav mr-auto list-inline tabs-underlined">
       <% if user_signed_in? %>
         <li class="nav-item">
-          <%= link_to "My Contracts", contracts_path, class: "nav-link" %>
+          <%= link_to "Contracts", contracts_path, class: "nav-link tab-underlined" %>
         </li>
         <li class="nav-item">
-          <%= link_to "New Favour", new_favour_path, class: "nav-link" %>
+          <%= link_to "Favours", my_favours_path, class: "nav-link tab-underlined" %>
         </li>
         <li class="nav-item">
-          <%= link_to "My Favours", my_favours_path, class: "nav-link" %>
+          <%= link_to "New Favour", new_favour_path, class: "nav-link tab-underlined" %>
         </li>
         <li class="nav-item dropdown">
           <%if current_user.profile_picture.attached? %>

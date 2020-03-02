@@ -3,7 +3,10 @@
   background-position: center;
   // padding: 150px 0;
   text-align: center;
-  min-height: 500px;
+  // min-height: 500px;
+  height: 100vh;
+  // justify-content: space-around;
+  // align-items: center;
 }
 
 .banner h1 {
@@ -25,4 +28,31 @@
   max-height: 300px;
   max-width: 300px;
   margin-top: 100px;
+}
+
+.arrow {
+  text-align: center;
+  margin: 6% 0;
+  p {
+    color: $red;
+    text-decoration: none;
+    font-size: 20px;
+  }
+}
+.bounce {
+  -moz-animation: bounce 2s infinite;
+  -webkit-animation: bounce 2s infinite;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
 }
