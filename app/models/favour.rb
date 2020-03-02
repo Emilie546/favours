@@ -1,7 +1,8 @@
 class Favour < ApplicationRecord
   belongs_to :category
   belongs_to :user
-  has_one :contract, dependent: :destroy
+  # has_one :contract, dependent: :destroy
+  has_many :contract, dependent: :destroy
   has_many :payment
   monetize :price_cents
 

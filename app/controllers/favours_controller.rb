@@ -4,9 +4,8 @@ class FavoursController < ApplicationController
   def index
     # Vue de toute les Favours sur le marcher, visible de tout le monde... (C'est notre pages d'accueil)
     @categories = Category.all
-    @favours = Favour.geocoded.left_outer_joins(:contract).where("contracts.id IS NULL") # .left_outer_joins(:contract).where("contracts.id IS NULL"), permet d'afficher toute les favours qui non pas de contracts
+    @favours = Favour.geocoded #.left_outer_joins(:contract).where("contracts.id IS NULL") #.left_outer_joins(:contract).where("contracts.id IS NULL"), permet d'afficher toute les favours qui non pas de contracts
     @favours = @favours.where(category_id: params[:category]) if params[:category].present?
-
 
     @markers = @favours.map do |favour|
       {
@@ -27,12 +26,13 @@ class FavoursController < ApplicationController
   end
 
   def show
+    # pour avoir les infos du user dans la show
     @favour = Favour.geocoded.find(params[:id])
     @marker = {
       lat: @favour.latitude,
       lng: @favour.longitude
     }
-    @user = @favour.user        # pour avoir les infos du user dans la show
+    @user = @favour.user
   end
 
   def new
