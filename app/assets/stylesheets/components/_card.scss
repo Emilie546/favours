@@ -90,4 +90,29 @@
   background-color: white;
 }
 
+.card-delete {
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+}
+
+.card-delete a {
+  color: $gray;
+  position: absolute;
+  top: 100px;
+  right: 30px;
+  &:hover {
+    color: $red;
+  }
+}
+
+.status-box {
+  display: flex;
+  justify-content: space-between;
+}
+
+.status {
+  border : 1px solid #E6E7E8;
+}
+
 
