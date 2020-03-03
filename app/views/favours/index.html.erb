@@ -17,7 +17,7 @@
       <div class="categ-icons row" style="margin-top: 5%; display:flex; align-items:center;">
         <% @categories.each do |cat| %>
           <div class="col-1 hvr-grow" style="font-size: 30px;">
-            <%= link_to cat.icons.html_safe, favours_path(category: cat.id)%>
+            <%= link_to cat.icons.html_safe, favours_path(category: cat.id), title: cat.name %>
           </div>
         <% end %>
       </div>
@@ -84,6 +84,7 @@
             <div class="row">
               <div class="col-6">
                 <h5><%= f.name %></h5>
+                <p><%= f.category.icons.html_safe %></p>
               </div>
               <div class="col-6 text-right">
                 <p><%= humanized_money_with_symbol(f.price * 100) %></p>
