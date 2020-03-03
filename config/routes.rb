@@ -17,4 +17,6 @@ Rails.application.routes.draw do
   end
 
   get 'my_favours', to: 'favours#myfavours'
+  get 'accept', to: 'contracts#accept'
+  get 'refuse', to: 'contracts#refuse'
 end
