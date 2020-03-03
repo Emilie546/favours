@@ -16,10 +16,10 @@
   margin-bottom: 12px;
   max-height: 100px;
   padding: 12px;
+}
 
-  // &:hover {
-  //   border: 2px solid #3FB1CE;
-  // }
+.categ a {
+  text-decoration: none;
 }
 
 // tentative d'effet js
@@ -46,6 +46,7 @@
 
 .map-container {
   border-radius: 5px;
+  margin-top: 20px;
   border: 1px solid #6D6F70;
   max-height: 650px;
   position: sticky;
