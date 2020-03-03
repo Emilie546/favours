@@ -108,6 +108,50 @@
   background-color: white;
 }
 
+.img-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+form abbr[title] {
+    border-bottom: none !important;
+    text-decoration: none !important;
+  }
+
+.float{
+  width: 200px;
+  float: left;
+}
+
+.pay {
+  display: flex;
+  justify-content: space-between;
+  }
+
+.col-pay {
+  display:inline-block;
+}
+
+.card-payment {
+  border: 1px solid #E6E7E8;
+  border-radius: 5px;
+  background-color: white;
+  color: black;
+  margin-right: 20px;
+  margin-bottom: 12px;
+  height: 200px;
+  padding: 12px;
+  // paddingpx;
+}
+
+.shopping {
+  font-size: 25px;
+}
+
+.shopping-cart {
+  float: right;
+
 .card-delete {
   display: flex;
   align-items: flex-end;
