@@ -1,6 +1,6 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <%= link_to root_path, class: "navbar-brand" do %>
-    <%= image_tag "Favours.png" %>
+    <%= image_tag "Favours.png", class: 'avatar' %>
     <% end %>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -9,13 +9,16 @@
 
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
+    <ul class="navbar-nav mr-auto list-inline tabs-underlined">
       <% if user_signed_in? %>
-        <li class="nav-item active">
-          <%= link_to "Home", "#", class: "nav-link" %>
+        <li class="nav-item">
+          <%= link_to "Contracts", contracts_path, class: "nav-link tab-underlined" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Messages", "#", class: "nav-link" %>
+          <%= link_to "Favours", my_favours_path, class: "nav-link tab-underlined" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "New Favour", new_favour_path, class: "nav-link tab-underlined" %>
         </li>
         <li class="nav-item dropdown">
           <%if current_user.profile_picture.attached? %>
@@ -25,9 +28,6 @@
           <% end %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "Profil", edit_user_registration_path, class: "dropdown-item" %>
-            <%= link_to "My contracts", contracts_path, class: "dropdown-item" %>
-            <%= link_to "New Favour", new_favour_path, class: "dropdown-item" %>
-            <%= link_to "My Favours", my_favours_path, class: "dropdown-item" %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>

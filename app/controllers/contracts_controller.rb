@@ -3,6 +3,8 @@ class ContractsController < ApplicationController
   def index
     # Nous permet de voir toutes les Favours que l'on accepter, et uniquement les notres...
     @contracts = Contract.where(user: current_user)
+    @current_contracts = Contract.where(user: current_user).select { |contract| contract.favour.end_time > DateTime.now }
+    @past_contracts = Contract.where(user: current_user).select { |contract| contract.favour.end_time < DateTime.now }
   end
 
   def new

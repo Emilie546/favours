@@ -1,7 +1,9 @@
 .navbar-lewagon {
   justify-content: space-between;
-  // background: #204A82;
-  background-color: #6D6F70;
+  position: absolute;
+  width: 100%;
+  background: transparent;
+  box-shadow: none;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -13,9 +15,25 @@
 }
 
 .navbar-nav .nav-item .nav-link {
-  color: white;
+  color: $gray;
+}
 
-  .active {
-    color: white;
+.tabs-underlined {
+  display: flex;
+  align-items: center;
+}
+
+.tabs-underlined .tab-underlined {
+  color: $gray;
+  padding: 8px;
+  margin: 8px 16px;
+  opacity: .4;
+  cursor: pointer;
+  text-decoration: none;
+  border-bottom: 4px solid transparent;
+
+  &:hover {
+    opacity: 1;
+    border-bottom: 3px solid #555555;
   }
 }

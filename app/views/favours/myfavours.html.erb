@@ -11,6 +11,21 @@
           <p class="card-text"><%= f.location %></p>
           <p class="card-text"><%= humanized_money_with_symbol(f.price * 100) %></p>
         </div>
+        <h2>Profil accept contract</h2>
+        <% f.contract.each do |c| %>
+          <div class="notification">
+            <%= profile_picture(c.user) %>
+            <div class="notification-content">
+              <p><small><%= c.user.first_name %> <%= c.user.last_name %></small></p>
+              <p><strong><%= c.user.phone_number %></strong></p>
+              <p><%= c.user.email %></p>
+            </div>
+
+            <div class="notification-actions">
+              <a href="#">Select <i class="fas fa-pencil-alt"></i></a>
+            </div>
+          </div>
+        <% end %>
         <div class="mt-4 flex-btns">
           <%= link_to "Edit", edit_favour_path(f), class: 'btn btn-outline-primary ml-5 mr-5 px-2 mb-4' %>
           <%= link_to "Delete", favour_path(f), method: :delete, class: 'btn btn-outline-primary ml-5 mr-5 px-2 mb-4' %>
@@ -19,5 +34,3 @@
     <% end %>
   </div>
 </div>
-
-
