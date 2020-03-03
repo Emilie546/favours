@@ -22,7 +22,8 @@
             </div>
 
             <div class="notification-actions">
-              <a href="#">Select <i class="fas fa-pencil-alt"></i></a>
+              <a><%= link_to "Accept", accept_path(contract_id: c.id), class: 'fas' %></a>
+              <a><%= link_to "Refuse", refuse_path(contract_id: c.id), class: 'fas' %></a>
             </div>
           </div>
         <% end %>

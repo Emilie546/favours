@@ -12,6 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2020_03_03_122901) do
 
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -49,6 +50,8 @@ ActiveRecord::Schema.define(version: 2020_03_03_122901) do
     t.datetime "cancelled_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "accept_at"
+    t.datetime "refuse_at"
     t.index ["favour_id"], name: "index_contracts_on_favour_id"
     t.index ["user_id"], name: "index_contracts_on_user_id"
   end

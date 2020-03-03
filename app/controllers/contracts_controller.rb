@@ -3,8 +3,23 @@ class ContractsController < ApplicationController
   def index
     # Nous permet de voir toutes les Favours que l'on accepter, et uniquement les notres...
     @contracts = Contract.where(user: current_user)
-    @current_contracts = Contract.where(user: current_user).select { |contract| contract.favour.end_time > DateTime.now }
-    @past_contracts = Contract.where(user: current_user).select { |contract| contract.favour.end_time < DateTime.now }
+    @current_contracts = Contract.where(user: current_user).where.not(accept_at: nil).select { |contract| contract.favour.end_time > DateTime.now }
+    @past_contracts = Contract.where(user: current_user).where.not(accept_at: nil).select { |contract| contract.favour.end_time < DateTime.now }
+    #.where.not(accept_at: nil) permet d'afficher uniquement tous les Contracts qui ont la colonne Accept_at qui n'est pas nul
+  end
+
+  def accept
+    # Permet d'update uniquement la colonne Accept_at, et de lui mettre la date actuelle
+    @contract = Contract.find(params[:contract_id])
+    @contract.update(accept_at: DateTime.now)
+    redirect_to root_path
+  end
+
+  def refuse
+    # Permet d'update uniquement la colonne refuse_at, et de lui mettre la date actuelle
+    @contract = Contract.find(params[:contract_id])
+    @contract.update(refuse_at: DateTime.now)
+    redirect_to root_path
   end
 
   def new
