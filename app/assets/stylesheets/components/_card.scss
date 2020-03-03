@@ -16,10 +16,10 @@
   margin-bottom: 12px;
   max-height: 100px;
   padding: 12px;
+}
 
-  // &:hover {
-  //   border: 2px solid #3FB1CE;
-  // }
+.categ a {
+  text-decoration: none;
 }
 
 // tentative d'effet js
@@ -46,6 +46,7 @@
 
 .map-container {
   border-radius: 5px;
+  margin-top: 20px;
   border: 1px solid #6D6F70;
   max-height: 650px;
   position: sticky;
@@ -59,18 +60,28 @@
 
 .favour-show-card {
   border: 1px solid #E6E7E8;
+  border-radius: 5px;
+  min-height: 200px;
   margin-top: 24px;
-  min-width: 55%;
-  padding: 12px;
-  box-shadow: 5px 2px 2px #E6E7E8;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  align-items: center;
 }
 
 .user-favour-card {
   border: 1px solid #E6E7E8;
+  border-radius: 5px;
+  min-height: 200px;
   margin-top: 24px;
-  min-width: 45%;
-  padding: 12px;
-  box-shadow: 5px 2px 2px #E6E7E8;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.user-favour-card img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
 }
 
 // .user-flex {
@@ -90,6 +101,7 @@
 .map-show-card {
   border: 1px solid #E6E7E8;
   margin-top: 36px;
+  border-radius: 5px;
 }
 
 .card-form {
@@ -108,6 +120,51 @@
   background-color: white;
 }
 
+.img-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+form abbr[title] {
+  border-bottom: none !important;
+  text-decoration: none !important;
+}
+
+.float {
+  width: 200px;
+  float: left;
+}
+
+.pay {
+  display: flex;
+  justify-content: space-between;
+}
+
+.col-pay {
+  display:inline-block;
+}
+
+.card-payment {
+  border: 1px solid #E6E7E8;
+  border-radius: 5px;
+  background-color: white;
+  color: black;
+  margin-right: 20px;
+  margin-bottom: 12px;
+  height: 200px;
+  padding: 12px;
+  // paddingpx;
+}
+
+.shopping {
+  font-size: 25px;
+}
+
+.shopping-cart {
+  float: right;
+}
+
 .card-delete {
   display: flex;
   align-items: flex-end;
@@ -119,6 +176,7 @@
   position: absolute;
   top: 100px;
   right: 30px;
+
   &:hover {
     color: $red;
   }
@@ -130,12 +188,14 @@
 }
 
 .status {
-  border : 1px solid #E6E7E8;
+  // border : 1px solid #E6E7E8;
+
 }
 
 .welcome {
   overflow: hidden;
   height: 200px;
+  border-radius: 5px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
