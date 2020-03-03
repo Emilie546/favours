@@ -7,12 +7,26 @@
   </div>
 </div>
 
-<div class="categ">
-  <!-- Mettre des petites icones comme trip advisor -->
-</div>
-
 <div class="container">
-  <div class="intro">
+
+  <div class="categ text-center mt-3" style="background-color: white; border-radius: 5px; width: 100%; margin: 0 auto; min-height: 150px;">
+    <div class="container">
+      <div class="categ-line" style="border-bottom: 1px solid black">
+        <h3 class="mt-2">Categories</h3>
+      </div>
+      <div class="categ-icons row" style="margin-top: 5%; display:flex; align-items:center;">
+        <% @categories.each do |cat| %>
+          <div class="col-1 hvr-grow" style="font-size: 30px;">
+            <%= link_to cat.icons.html_safe, favours_path(category: cat.id)%>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <!-- Mettre des petites icones comme trip advisor -->
+  </div>
+
+
+  <!-- <div class="intro">
     <h1 class="title">How would you like to help today?</h1> <br><br>
     <div class="dropdown">
       <button class="btn btn-outline-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -26,7 +40,7 @@
 
       </div>
     </div>
-  </div>
+  </div> -->
 
   <div class="row">
     <div class="col-7">

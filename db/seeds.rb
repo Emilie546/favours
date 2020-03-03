@@ -7,18 +7,18 @@ Category.destroy_all
 User.destroy_all
 
 puts 'Creating categories...'
-dog_walk = Category.create!(name: 'Dog-Walking')
-kids = Category.create!(name: 'Baby-Sitting')
-garden = Category.create!(name: 'Gardening')
-horse = Category.create!(name: 'Horses')
-cat = Category.create!(name: 'Cat-Sitting')
-it = Category.create!(name: 'Tech Support')
-car = Category.create!(name: 'Ride-Share')
-clean = Category.create!(name: 'House Keeping')
-devoirs = Category.create!(name: 'Tutoring')
-company = Category.create!(name: 'Elderly Care')
-main = Category.create!(name: 'Maintenance')
-other = Category.create!(name: 'Other')
+dog_walk = Category.create!(name: 'Dog-Walking', icons: '<p>&#128054</p>')
+kids = Category.create!(name: 'Baby-Sitting', icons: '<p>&#128118;&#127996</p>')
+garden = Category.create!(name: 'Gardening', icons: '<p>&#127795</p>')
+horse = Category.create!(name: 'Horses', icons: '<p>&#128052</p>')
+cat = Category.create!(name: 'Cat-Sitting', icons: '<p>&#128049</p>')
+it = Category.create!(name: 'Tech Support', icons: '<p>&#128187 </p>')
+car = Category.create!(name: 'Ride-Share', icons: '<p>&#128664</p>')
+clean = Category.create!(name: 'House Keeping', icons: '<p>&#127969</p>')
+devoirs = Category.create!(name: 'Tutoring', icons: '<p>&#127891;</p>')
+company = Category.create!(name: 'Elderly Care', icons: '<p>&#128116;&#127996</p>')
+main = Category.create!(name: 'Maintenance', icons: '<p>&#128119;&#127996</p>')
+other = Category.create!(name: 'Other', icons: '<p>&#128378;&#127996</p>')
 
 
 puts 'Creating users...'
