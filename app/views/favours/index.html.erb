@@ -35,18 +35,32 @@
         <% if user_signed_in? %>
           <%if current_user.profile_picture.attached? %>
             <%= cl_image_tag current_user.profile_picture.key %>
+            <div class="card-welcome-infos">
+              <div class="welcome-text ml-5">
+                <h1>Welcome <%= current_user.first_name %></h1>
+                <p>How would you like to help today?</p>
+              </div>
+            </div>
           <% else %>
-            <%= image_tag "Favours.png" %>
+
+            <div class="card-welcome-infos">
+              <div class="welcome-text ml-5">
+                <h1>Welcome <%= current_user.first_name %></h1>
+                <p>How would you like to help today?</p>
+              </div>
+            </div>
           <% end %>
         <% else %>
-          <%= link_to 'Sign up', new_user_session_path, class: 'btn btn-outline-primary'  %>
-        <% end %>
-        <div class="card-welcome-infos">
-          <div class="welcome-text ml-5">
-            <h1>Welcome <%= current_user.first_name %></h1>
-            <p>How would you like to help today?</p>
+          <%= image_tag "Favours.png" %>
+          <div class="card-welcome-infos">
+            <div class="welcome-text ml-5">
+              <h1>Welcome</h1>
+              <p>How would you like to help today?</p>
+              <%= link_to 'Sign up', new_user_session_path, class: 'btn btn-outline-primary'  %>
+            </div>
           </div>
-        </div>
+        <% end %>
+
       </div>
 
       <div class="cards">
