@@ -115,11 +115,11 @@
 }
 
 form abbr[title] {
-    border-bottom: none !important;
-    text-decoration: none !important;
-  }
+  border-bottom: none !important;
+  text-decoration: none !important;
+}
 
-.float{
+.float {
   width: 200px;
   float: left;
 }
@@ -127,7 +127,7 @@ form abbr[title] {
 .pay {
   display: flex;
   justify-content: space-between;
-  }
+}
 
 .col-pay {
   display:inline-block;
@@ -151,6 +151,7 @@ form abbr[title] {
 
 .shopping-cart {
   float: right;
+}
 
 .card-delete {
   display: flex;
@@ -163,6 +164,7 @@ form abbr[title] {
   position: absolute;
   top: 100px;
   right: 30px;
+
   &:hover {
     color: $red;
   }
