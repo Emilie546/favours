@@ -6,7 +6,6 @@
   box-shadow: none;
 }
 
-
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
@@ -24,6 +23,11 @@
   align-items: center;
 }
 
+.tabs-underlined .tab-underlined.active {
+  opacity: 1;
+  border-bottom: 3px solid #555555;
+}
+
 .tabs-underlined .tab-underlined {
   color: $gray;
   padding: 8px;
@@ -37,4 +41,17 @@
     opacity: 1;
     border-bottom: 3px solid #555555;
   }
+}
+
+.navbar-hugo {
+  justify-content: space-between;
+  background: white;
+}
+
+.navbar-hugo .navbar-collapse {
+  flex-grow: 0;
+}
+
+.navbar-hugo .navbar-brand img {
+  width: 40px;
 }

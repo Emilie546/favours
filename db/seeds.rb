@@ -62,7 +62,6 @@ user_5.save!
 
 
 puts 'Creating favours...'
-
 # Favour.create!(name: 'Golden Retriever', description: 'Golden retriever needs a walk every monday', category: dog_walk, user: user, start_time: Faker::Time.forward, end_time: Faker::Time.forward,  location: 'Chemin du Creux de Corsy 75, 1093 La Conversion', price_cents: Faker::Number.number(digits: 2))
 # sleep 1
 # Favour.create!(name: 'Baby-Sitting', description: 'Urgent', category: kids, user: user_1, start_time: Faker::Time.forward, end_time: Faker::Time.forward,  location: 'Rue Verdaine 3, 1095 Lutry', price_cents: Faker::Number.number(digits: 2))
