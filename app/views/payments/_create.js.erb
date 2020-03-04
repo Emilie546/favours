@@ -1,0 +1,15 @@
+console.log("helllooooooo");
+// const modalContent = document.querySelector('.modal-content');
+// modalContent.innerHTML = "<%= escape_javascript(render 'modal') %>"
+
+// const modal = document.getElementById('exampleModalCenter');
+// modal.showModal();
+
+// fonction pour montrer le modal
+$("#exampleModalCenter").find(".modal-content").html("<%= escape_javascript(render 'modal') %>");
+
+$('#new_payment').on('submit', function(ev) {
+  $("#exampleModalCenter").modal('show');
+});
+
+console.log("Goodbye");
