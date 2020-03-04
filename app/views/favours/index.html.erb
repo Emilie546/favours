@@ -7,14 +7,14 @@
   </div>
 </div>
 
-<div class="container" style="margin-right: 12px;">
+<div class="container">
 
   <div class="categ text-center mt-3" style="background-color: white; border-radius: 5px; width: 100%; margin: 0 auto; min-height: 150px;">
     <div class="container">
-      <div class="categ-line" style="border-bottom: 1px solid black">
-        <h3 class="mt-2">Categories</h3>
+      <div class="categ-line" style="border-bottom: 1px solid red">
+        <h3 class="mt-2 mb-2">Categories</h3>
       </div>
-      <div class="categ-icons row" style="margin-top: 5%; display:flex; align-items:center;">
+      <div class="categ-icons row" style="margin-top: 30px; display:flex; align-items:center;">
         <% @categories.each do |cat| %>
           <div class="col-1 hvr-grow" style="font-size: 30px;">
             <%= link_to cat.icons.html_safe, favours_path(category: cat.id), title: cat.name %>
