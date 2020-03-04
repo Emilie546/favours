@@ -1,47 +1,49 @@
-<div class="container"><br><br>
-  <div class="row mt-3 form-white">
-    <div class="col-6">
-      <h2 class="text-center mb-5">Edit <%= resource_name.to_s.humanize %></h2>
-        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-          <%= f.error_notification %>
+<div class="container">
+  <div class="form-outline">
 
-          <div class="form-inputs">
-            <%= f.input :first_name, required: true, autofocus: true %>
-            <%= f.input :last_name, required: true %>
-            <%= f.input :email, required: true %>
-            <%= f.input :location, required: true %>
-            <%= f.input :phone_number, required: true %>
-            <%= f.input :description, required: true %>
-            <%= f.input :age, required: true %>
-            <%= f.input :profile_picture, as: :file %>
+    <h2 class="text-center">Edit <%= resource_name.to_s.humanize %></h2>
+    <%= image_tag "buildings.png", alt: "alttext" %>
 
-            <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-              <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
-            <% end %>
+      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+        <%= f.error_notification %>
 
-            <div class="form-inputs mt-5">
-              <%= f.input :password,
-                          hint: "leave it blank if you don't want to change it",
-                          required: false, placeholder: "new-password - if you want to change it",
-                          input_html: { autocomplete: "new-password" } %>
-              <%= f.input :password_confirmation,
-                          required: false, placeholder: "new-password confirmation",
-                          input_html: { autocomplete: "new-password" } %> <br>
-              <%= f.input :current_password,
-                          hint: "we need your current password to confirm your changes",
-                          required: true,
-                          input_html: { autocomplete: "current-password" } %>
-            </div>
+        <div class="form-inputs">
+          <%= f.input :first_name, required: true, autofocus: true %>
+          <%= f.input :last_name, required: true %>
+          <%= f.input :email, required: true %>
+          <%= f.input :location, required: true %>
+          <%= f.input :phone_number, required: true %>
+          <%= f.input :description, required: true %>
+          <%= f.input :age, required: true %>
+          <%= f.input :profile_picture, as: :file %>
+
+          <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+            <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+          <% end %>
+
+          <div class="form-inputs mt-5">
+            <%= f.input :password,
+                        hint: "leave it blank if you don't want to change it",
+                        required: false, placeholder: "new-password - if you want to change it",
+                        input_html: { autocomplete: "new-password" } %>
+            <%= f.input :password_confirmation,
+                        required: false, placeholder: "new-password confirmation",
+                        input_html: { autocomplete: "new-password" } %> <br>
+            <%= f.input :current_password,
+                        hint: "we need your current password to confirm your changes",
+                        required: true,
+                        input_html: { autocomplete: "current-password" } %>
           </div>
-
-          <div class="mt-5 flex-btns">
-            <%= f.submit 'Update', class: 'btn btn-outline-primary px-4 ' %>
-          </div>
-        <% end %>
-
-        <div class="mt-4 flex-btns">
-          <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
         </div>
-    </div>
+
+        <div class="mt-5 flex-btns">
+          <%= f.submit 'Update', class: 'btn btn-outline-success' %>
+        </div>
+      <% end %>
+
+      <div class="mt-4 flex-btns">
+        <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+      </div>
+
   </div>
 </div>
