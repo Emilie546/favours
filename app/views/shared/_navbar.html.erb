@@ -1,4 +1,9 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon navbar-home">
+<div class="navbar navbar-expand-sm navbar-light navbar-home
+<%= if controller_name == "favours" && action_name == "index"
+      "navbar-lewagon"
+    else
+      "navbar-hugo"
+    end %>" >
   <%= link_to root_path, class: "navbar-brand" do %>
     <%= image_tag "Favours.png", class: 'avatar' %>
   <% end %>
@@ -12,13 +17,13 @@
     <ul class="navbar-nav mr-auto list-inline tabs-underlined">
       <% if user_signed_in? %>
         <li class="nav-item">
-          <%= link_to "Contracts", contracts_path, class: "nav-link tab-underlined" %>
+          <%= link_to "Contracts", contracts_path, class: "nav-link tab-underlined #{"active" if controller_name == "contracts"}" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Favours", my_favours_path, class: "nav-link tab-underlined" %>
+          <%= link_to "Favours", my_favours_path, class: "nav-link tab-underlined #{"active" if controller_name == "favours" && action_name == "myfavours"}" %>
         </li>
         <li class="nav-item">
-          <%= link_to "New Favour", new_favour_path, class: "nav-link tab-underlined" %>
+          <%= link_to "New Favour", new_favour_path, class: "nav-link tab-underlined #{"active" if controller_name == "favours" && action_name == "new"}" %>
         </li>
         <li class="nav-item dropdown">
           <%if current_user.profile_picture.attached? %>
