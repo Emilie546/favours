@@ -101,7 +101,6 @@ puts 'Creating favours...'
 # sleep 1
 # Favour.create!(name: 'Video-game oponent', description: 'Mario Kart', category: other, user: user, start_time: Faker::Time.forward, end_time: Faker::Time.forward,  location: 'Chemin des Bernodes, 1296 Coppet', price_cents: Faker::Number.number(digits: 2))
 # sleep 1
-,6.6582343,17
 
 Favour.create!(name: 'Golden Retriever', description: 'Golden retriever needs a walk every monday', category: dog_walk, user: user, start_time: Faker::Time.forward, end_time: Faker::Time.forward,  longitude: 46.5089513, latitude: 6.6582343, price_cents: Faker::Number.number(digits: 2))
 sleep 1
