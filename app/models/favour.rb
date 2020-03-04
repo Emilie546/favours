@@ -10,7 +10,7 @@ class Favour < ApplicationRecord
   validates :name, uniqueness: true, presence: true
   validates :description, presence: true
   validates :price_cents,  numericality: { only_integer: true }
-  validates :location, presence: true
+  # validates :location, presence: true Je l'ai enleve pour le geocode
   validates :start_time, presence: true
   validates :end_time, presence: true
 
