@@ -102,42 +102,42 @@ puts 'Creating favours...'
 # Favour.create!(name: 'Video-game oponent', description: 'Mario Kart', category: other, user: user, start_time: Faker::Time.forward, end_time: Faker::Time.forward,  location: 'Chemin des Bernodes, 1296 Coppet', price_cents: Faker::Number.number(digits: 2))
 # sleep 1
 
-Favour.create!(name: 'Golden Retriever', description: 'Golden retriever needs a walk every monday', category: dog_walk, user: user, start_time: Faker::Time.forward, end_time: Faker::Time.forward,  longitude: 46.5089513, latitude: 6.6582343, price_cents: Faker::Number.number(digits: 2))
+Favour.create!(name: 'Golden Retriever', description: 'Golden retriever needs a walk every monday', category: dog_walk, user: user, start_time: Faker::Time.forward, end_time: Faker::Time.forward,  latitude: 46.5089513, longitude: 6.6582343, price_cents: Faker::Number.number(digits: 2))
 sleep 1
-Favour.create!(name: 'Baby-Sitting', description: 'Urgent', category: kids, user: user_1, start_time: Faker::Time.forward, end_time: Faker::Time.forward, longitude: 46.5026119, latitude: 6.6832795, price_cents: Faker::Number.number(digits: 2))
+Favour.create!(name: 'Baby-Sitting', description: 'Urgent', category: kids, user: user_1, start_time: Faker::Time.forward, end_time: Faker::Time.forward, latitude: 46.5026119, longitude: 6.6832795, price_cents: Faker::Number.number(digits: 2))
 sleep 1
-Favour.create!(name: 'Flower needs planting', description: 'I need some gardenias planted', category: garden, user: user_2, start_time: Faker::Time.forward, end_time: Faker::Time.forward,  longitude: 46.3197734, latitude: 6.194338, price_cents: Faker::Number.number(digits: 2))
+Favour.create!(name: 'Flower needs planting', description: 'I need some gardenias planted', category: garden, user: user_2, start_time: Faker::Time.forward, end_time: Faker::Time.forward,  latitude: 46.3197734, longitude: 6.194338, price_cents: Faker::Number.number(digits: 2))
 sleep 1
-Favour.create!(name: 'Help needed', description: 'Can someone ride my horse, Lolita this week', category: horse, user: user_3, start_time: Faker::Time.forward, end_time: Faker::Time.forward,  longitude: 46.508433, latitude: 6.6278714, price_cents: Faker::Number.number(digits: 2))
+Favour.create!(name: 'Help needed', description: 'Can someone ride my horse, Lolita this week', category: horse, user: user_3, start_time: Faker::Time.forward, end_time: Faker::Time.forward,  latitude: 46.508433, longitude: 6.6278714, price_cents: Faker::Number.number(digits: 2))
 sleep 1
-Favour.create!(name: 'Lonely Kitten', description: 'Help! Lonely kitty needs company', category: cat, user: user_4, start_time: Faker::Time.forward, end_time: Faker::Time.forward,  longitude: 46.5194027 , latitude: 6.6285312, price_cents: Faker::Number.number(digits: 2))
+Favour.create!(name: 'Lonely Kitten', description: 'Help! Lonely kitty needs company', category: cat, user: user_4, start_time: Faker::Time.forward, end_time: Faker::Time.forward,  latitude: 46.5194027 , longitude: 6.6285312, price_cents: Faker::Number.number(digits: 2))
 sleep 1
 Favour.create!(name: 'Wild prairie', description: 'Lawn mower wanted', category: garden, user: user_5, start_time: Faker::Time.forward, end_time: Faker::Time.forward,  latitude: 46.5324247, longitude: 6.5889239, price_cents: Faker::Number.number(digits: 2))
 sleep 1
-Favour.create!(name: 'Ride to GVA', description: 'Looking for someone to share the ride', category: car, user: user, start_time: Faker::Time.forward, end_time: Faker::Time.forward,  longitude: 46.5167587, latitude:  6.564989, price_cents: Faker::Number.number(digits: 2))
+Favour.create!(name: 'Ride to GVA', description: 'Looking for someone to share the ride', category: car, user: user, start_time: Faker::Time.forward, end_time: Faker::Time.forward,  latitude: 46.5167587, longitude:  6.564989, price_cents: Faker::Number.number(digits: 2))
 sleep 1
-Favour.create!(name: 'Need to find day home for puppy', description: 'Little Dachshund needs to be kept while at work', category: dog_walk, user: user_1, start_time: Faker::Time.forward, end_time: Faker::Time.forward,  longitude: 46.5484919, latitude: 6.671373, price_cents: Faker::Number.number(digits: 2))
+Favour.create!(name: 'Need to find day home for puppy', description: 'Little Dachshund needs to be kept while at work', category: dog_walk, user: user_1, start_time: Faker::Time.forward, end_time: Faker::Time.forward,  latitude: 46.5484919, longitude: 6.671373, price_cents: Faker::Number.number(digits: 2))
 sleep 1
-Favour.create!(name: 'Triplets', description: 'Help...', category: kids, user: user_2, start_time: Faker::Time.forward, end_time: Faker::Time.forward,  longitude: 46.5008672, latitude: 6.692892, price_cents: Faker::Number.number(digits: 2))
+Favour.create!(name: 'Triplets', description: 'Help...', category: kids, user: user_2, start_time: Faker::Time.forward, end_time: Faker::Time.forward,  latitude: 46.5008672, longitude: 6.692892, price_cents: Faker::Number.number(digits: 2))
 sleep 1
-Favour.create!(name: 'Bush trimming', description: 'Shrubbery', category: garden, user: user_3, start_time: Faker::Time.forward, end_time: Faker::Time.forward,  longitude: 46.5104554, latitude: 6.6325265, price_cents: Faker::Number.number(digits: 2))
+Favour.create!(name: 'Bush trimming', description: 'Shrubbery', category: garden, user: user_3, start_time: Faker::Time.forward, end_time: Faker::Time.forward,  latitude: 46.5104554, longitude: 6.6325265, price_cents: Faker::Number.number(digits: 2))
 sleep 1
-Favour.create!(name: 'Horse - Domino', description: 'Magnificient Stallion', category: horse, user: user_4, start_time: Faker::Time.forward, end_time: Faker::Time.forward,  longitude: 46.5084833, latitude: 6.4950129, price_cents: Faker::Number.number(digits: 2))
+Favour.create!(name: 'Horse - Domino', description: 'Magnificient Stallion', category: horse, user: user_4, start_time: Faker::Time.forward, end_time: Faker::Time.forward,  latitude: 46.5084833, longitude: 6.4950129, price_cents: Faker::Number.number(digits: 2))
 sleep 1
-Favour.create!(name: 'House sitting while away', description: 'Going on holiday and need someone trustworthy to keep an eye on my house', category: clean, user: user_5, start_time: Faker::Time.forward, end_time: Faker::Time.forward,  longitude: 46.4764808, latitude: 6.4425796, price_cents: Faker::Number.number(digits: 2))
+Favour.create!(name: 'House sitting while away', description: 'Going on holiday and need someone trustworthy to keep an eye on my house', category: clean, user: user_5, start_time: Faker::Time.forward, end_time: Faker::Time.forward,  latitude: 46.4764808, longitude: 6.4425796, price_cents: Faker::Number.number(digits: 2))
 sleep 1
-Favour.create!(name: 'Website creation', description: 'Can someone help me with a new website for my flower-store?', category: it, user: user, start_time: Faker::Time.forward, end_time: Faker::Time.forward,  longitude: 46.5154453, latitude: 6.5458986, price_cents: Faker::Number.number(digits: 2))
+Favour.create!(name: 'Website creation', description: 'Can someone help me with a new website for my flower-store?', category: it, user: user, start_time: Faker::Time.forward, end_time: Faker::Time.forward,  latitude: 46.5154453, longitude: 6.5458986, price_cents: Faker::Number.number(digits: 2))
 sleep 1
-Favour.create!(name: 'Printer Set-up', description: 'Lost in a sea of cables behind my desk - help me', category: it, user: user_1, start_time: Faker::Time.forward, end_time: Faker::Time.forward,  longitude: 46.5173601, latitude: 6.477526, price_cents: Faker::Number.number(digits: 2))
+Favour.create!(name: 'Printer Set-up', description: 'Lost in a sea of cables behind my desk - help me', category: it, user: user_1, start_time: Faker::Time.forward, end_time: Faker::Time.forward,  latitude: 46.5173601, longitude: 6.477526, price_cents: Faker::Number.number(digits: 2))
 sleep 1
-Favour.create!(name: 'German tutor wanted', description: 'For my son, 14ys', category: devoirs, user: user_2, start_time: Faker::Time.forward, end_time: Faker::Time.forward, longitude: 46.3932958, latitude: 6.2549891, price_cents: Faker::Number.number(digits: 2))
+Favour.create!(name: 'German tutor wanted', description: 'For my son, 14ys', category: devoirs, user: user_2, start_time: Faker::Time.forward, end_time: Faker::Time.forward, latitude: 46.3932958, longitude: 6.2549891, price_cents: Faker::Number.number(digits: 2))
 sleep 1
-Favour.create!(name: 'Help with homework', description: 'Need help understanding my geometry homework', category: devoirs, user: user_3, start_time: Faker::Time.forward, end_time: Faker::Time.forward,  longitude: 46.2667355, latitude: 6.1574039, price_cents: Faker::Number.number(digits: 2))
+Favour.create!(name: 'Help with homework', description: 'Need help understanding my geometry homework', category: devoirs, user: user_3, start_time: Faker::Time.forward, end_time: Faker::Time.forward,  latitude: 46.2667355, longitude: 6.1574039, price_cents: Faker::Number.number(digits: 2))
 sleep 1
-Favour.create!(name: 'Cinema Opening', description: 'Can someone stand in line for me? Min 3 hours', category: other, user: user_4, start_time: Faker::Time.forward, end_time: Faker::Time.forward,  longitude: 46.3475617 , latitude: 6.1836419, price_cents: Faker::Number.number(digits: 2))
+Favour.create!(name: 'Cinema Opening', description: 'Can someone stand in line for me? Min 3 hours', category: other, user: user_4, start_time: Faker::Time.forward, end_time: Faker::Time.forward,  latitude: 46.3475617 , longitude: 6.1836419, price_cents: Faker::Number.number(digits: 2))
 sleep 1
-Favour.create!(name: 'Sock pick-up', description: 'Locked in bed - need someone to pick my stuff off the floor', category: other, user: user_5, start_time: Faker::Time.forward, end_time: Faker::Time.forward,  longitude: 46.2879653, latitude: 6.1596503, price_cents: Faker::Number.number(digits: 2))
+Favour.create!(name: 'Sock pick-up', description: 'Locked in bed - need someone to pick my stuff off the floor', category: other, user: user_5, start_time: Faker::Time.forward, end_time: Faker::Time.forward,  latitude: 46.2879653, longitude: 6.1596503, price_cents: Faker::Number.number(digits: 2))
 sleep 1
-Favour.create!(name: 'Video-game oponent', description: 'Mario Kart', category: other, user: user, start_time: Faker::Time.forward, end_time: Faker::Time.forward, longitude: 46.319367 , latitude: 6.1853344, price_cents: Faker::Number.number(digits: 2))
+Favour.create!(name: 'Video-game oponent', description: 'Mario Kart', category: other, user: user, start_time: Faker::Time.forward, end_time: Faker::Time.forward, latitude: 46.319367 , longitude: 6.1853344, price_cents: Faker::Number.number(digits: 2))
 sleep 1
 puts 'Finished!'
