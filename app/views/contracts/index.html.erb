@@ -1,14 +1,12 @@
 <div class="container">
   <br>
   <br>
-  <br>
-  <br>
   <div class="row status-box">
-
-    <div class="col-6 status">
+    <div class="col-6 status card card-body" style="border-radius: 8px; box-shadow: 0 0 15px rgba(0,0,0,0.2);">
       <h3><small>Past</small></h3>
+      <br>
       <% @past_contracts.each do |c| %>
-        <div class="card" style="border-radius: 5px; margin-bottom: 12px; box-shadow: 0 0 15px rgba(0,0,0,0.2);">
+        <div class="card border-0" style="border-radius: 2px; margin-bottom: 12px; box-shadow: 0 0 15px rgba(0,0,0,0.2);">
           <div class="row">
             <div class="col-9 card-body">
               <p class="card-text pl-2">Task: <%= c.favour.name %></p>
@@ -16,21 +14,17 @@
               <p class="card-text pl-2"><%= c.favour.location %></p>
             </div>
             <div class="col-3 card-delete">
-              <%= link_to favour_contract_path(c.favour, c),
-              method: :delete,
-              data: { confirm: "Are you sure?" } do %>
-                <i class="fas fa-trash-alt"></i>
-              <% end %>
             </div>
           </div>
         </div>
       <% end %>
     </div>
 
-    <div class="col-6 status">
+    <div class="col-6 status card card-body" style="border-radius: 8px; box-shadow: 0 0 15px rgba(0,0,0,0.2);">
       <h3><small>Current</small></h3>
+      <br>
       <% @current_contracts.each do |c| %>
-        <div class="card" style="border-radius: 5px; margin-bottom: 12px; box-shadow: 0 0 15px rgba(0,0,0,0.2);">
+        <div class="card border-0" style="border-radius: 2px; margin-bottom: 12px; box-shadow: 0 0 15px rgba(0,0,0,0.2);">
           <div class="row">
             <div class="col-9 card-body">
               <p class="card-text pl-2">Task: <%= c.favour.name %></p>
@@ -41,13 +35,12 @@
               <%= link_to favour_contract_path(c.favour, c),
               method: :delete,
               data: { confirm: "Are you sure?" } do %>
-                <i class="fas fa-trash-alt"></i>
+                <p>Cancel</p>
               <% end %>
             </div>
           </div>
         </div>
       <% end %>
     </div>
-
   </div>
 </div>
