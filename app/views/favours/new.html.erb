@@ -1,22 +1,25 @@
-<div class = container><br><br>
-  <div class="row mt-3 form-white">
-    <div class="col-6 mb-4 mt-4">
+<div class = container>
+
+
+    <div class="form-outline">
+
       <h2 class="text-center">New Favour</h2>
+
       <%= simple_form_for @favour do |f| %>
       <div class="form-group">
-        <%= f.input :name, class: 'form-control', placeholder: 'Name' %>
+        <%= f.input :name, class: 'form-control', placeholder: 'Lawn Mowing' %>
       </div>
       <div class="form-group">
-        <%= f.input :description, class: 'form-control', placeholder: 'Description' %>
+        <%= f.input :description, class: 'form-control', placeholder: 'I need someone to help with my garden as soon as possible! Two hour job, maximum and I will offer cookies and refreshments!' %>
       </div>
       <div class="form-group">
-        <%= f.association :category, class: 'form-control', placeholder: 'Category' %>
+        <%= f.association :category, class: 'form-control', prompt: 'Select a category' %>
       </div>
       <div class="form-group">
         <%= f.input :location, class: 'form-control', placeholder: 'Location' %>
       </div>
       <div class="form-group">
-        <%= f.input :price_cents, label: 'Price', class: 'form-control', placeholder: 'Price' %>
+        <%= f.input :price_cents, label: 'Price', class: 'form-control', input_html: {value: ''} %>
       </div>
       <div class="form-group mb-3">
         <%= f.input :start_time, label: 'Date', as: :date, html5: true, class: 'form-control', placeholder: "DD/MM/YYYY" %>
@@ -34,10 +37,6 @@
       <% end %>
     </div>
 
-    <div class="col-6">
-      <%= image_tag "undraw_people_tax5.png", alt: "alttext", class: "image" %>
-    </div>
-  </div>
 </div>
 
 
