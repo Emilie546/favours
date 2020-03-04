@@ -130,9 +130,9 @@ Favour.create!(name: 'Website creation', description: 'Can someone help me with 
 sleep 1
 Favour.create!(name: 'Printer Set-up', description: 'Lost in a sea of cables behind my desk - help me', category: it, user: user_1, start_time: Faker::Time.forward, end_time: Faker::Time.forward,  longitude: 46.5173601, latitude: 6.477526, price_cents: Faker::Number.number(digits: 2))
 sleep 1
-Favour.create!(name: 'German tutor wanted', description: 'For my son, 14ys', category: devoirs, user: user_2, start_time: Faker::Time.forward, end_time: Faker::Time.forward, longitude: 46.3932958, latiitude: 6.2549891, price_cents: Faker::Number.number(digits: 2))
+Favour.create!(name: 'German tutor wanted', description: 'For my son, 14ys', category: devoirs, user: user_2, start_time: Faker::Time.forward, end_time: Faker::Time.forward, longitude: 46.3932958, latitude: 6.2549891, price_cents: Faker::Number.number(digits: 2))
 sleep 1
-Favour.create!(name: 'Help with homework', description: 'Need help understanding my geometry homework', category: devoirs, user: user_3, start_time: Faker::Time.forward, end_time: Faker::Time.forward,  longitude: , latitude: , price_cents: Faker::Number.number(digits: 2))
+Favour.create!(name: 'Help with homework', description: 'Need help understanding my geometry homework', category: devoirs, user: user_3, start_time: Faker::Time.forward, end_time: Faker::Time.forward,  longitude: 46.2667355, latitude: 6.1574039, price_cents: Faker::Number.number(digits: 2))
 sleep 1
 Favour.create!(name: 'Cinema Opening', description: 'Can someone stand in line for me? Min 3 hours', category: other, user: user_4, start_time: Faker::Time.forward, end_time: Faker::Time.forward,  longitude: 46.3475617 , latitude: 6.1836419, price_cents: Faker::Number.number(digits: 2))
 sleep 1
