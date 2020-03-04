@@ -1,38 +1,56 @@
 <div class="container">
-  <br>
-  <br>
-  <br>
-  <br>
-  <div class="status">
+  
+  <h1>My favours</h1>
+
+  <div class="status mt-5">
+
     <% @favours.each do |f| %>
-      <div class="card">
+
+      <div class="card mb-3" style="width: 100%;">
         <div class="card-body">
-          <p class="card-text">Task: <%= f.name %></p>
+          <h5 class="card-title">
+            <%= f.category.icons.html_safe %>
+            <%= f.name %>
+            <%= link_to edit_favour_path(f) do %>
+              <i class="far fa-edit icone ml-3"></i>
+            <% end %>
+            <%= link_to favour_path(f),
+              method: :delete,
+              data: { confirm: "Are you sure?" } do %>
+                <i class="fas fa-trash-alt icone ml-3"></i>
+              <% end %>
+          </h5>
+          <h6 class="card-subtitle mb-2 text-muted"><%= f.location %></h6>
           <p class="card-text"><%= f.description %></p>
-          <p class="card-text"><%= f.location %></p>
+          <p class="card-text"><%= f.start_time %></p>
           <p class="card-text"><%= humanized_money_with_symbol(f.price * 100) %></p>
         </div>
-        <h2>Profil accept contract</h2>
+      </div>
+
+      <div id="people">
+        <p>People interested</p>
         <% f.contract.each do |c| %>
-          <div class="notification">
+          <div class="notification ml-5">
             <%= profile_picture(c.user) %>
             <div class="notification-content">
               <p><small><%= c.user.first_name %> <%= c.user.last_name %></small></p>
-              <p><strong><%= c.user.phone_number %></strong></p>
               <p><%= c.user.email %></p>
             </div>
 
-            <div class="notification-actions">
-              <a><%= link_to "Accept", accept_path(contract_id: c.id), class: 'fas' %></a>
-              <a><%= link_to "Refuse", refuse_path(contract_id: c.id), class: 'fas' %></a>
+            <div>
+              <a><%= link_to accept_path(contract_id: c.id) do %></a>
+                <i class="fas fa-check icone-green mr-4"></i>
+              <% end %>
+              <a><%= link_to refuse_path(contract_id: c.id) do %>
+                <i class="fas fa-times icone-red mr-4"></i></a>
+              <% end %>
             </div>
           </div>
         <% end %>
-        <div class="mt-4 flex-btns">
-          <%= link_to "Edit", edit_favour_path(f), class: 'btn btn-outline-primary ml-5 mr-5 px-2 mb-4' %>
-          <%= link_to "Delete", favour_path(f), method: :delete, class: 'btn btn-outline-primary ml-5 mr-5 px-2 mb-4' %>
-        </div>
       </div>
+
+      <hr class="my-5">
+
     <% end %>
   </div>
 </div>

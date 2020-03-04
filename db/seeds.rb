@@ -30,32 +30,32 @@ puts 'Creating users...'
 # user_4 = User.new(email: Faker::Internet.email, password: Faker::Internet.password(min_length: 8), first_name: Faker::Name.first_name , last_name: Faker::Name.last_name )
 
 file = URI.open('https://source.unsplash.com/collection/147385')
-user = User.new(email: Faker::Internet.email, password: Faker::Internet.password(min_length: 8), first_name: Faker::Name.first_name , last_name: Faker::Name.last_name )
+user = User.new(email: Faker::Internet.email, password: "123456", first_name: Faker::Name.first_name , last_name: Faker::Name.last_name )
 user.profile_picture.attach(io: file, filename: 'nes.jpeg', content_type: 'image/jpeg')
 user.save!
 
 file_1 = URI.open('https://source.unsplash.com/collection/147385')
-user_1 = User.new(email: Faker::Internet.email, password: Faker::Internet.password(min_length: 8), first_name: Faker::Name.first_name , last_name: Faker::Name.last_name )
+user_1 = User.new(email: Faker::Internet.email, password: "123456", first_name: Faker::Name.first_name , last_name: Faker::Name.last_name )
 user_1.profile_picture.attach(io: file_1, filename: 'nes.jpeg', content_type: 'image/jpeg')
 user_1.save!
 
 file_2 = URI.open('https://source.unsplash.com/collection/147385')
-user_2 = User.new(email: Faker::Internet.email, password: Faker::Internet.password(min_length: 8), first_name: Faker::Name.first_name , last_name: Faker::Name.last_name )
+user_2 = User.new(email: Faker::Internet.email, password: "123456", first_name: Faker::Name.first_name , last_name: Faker::Name.last_name )
 user_2.profile_picture.attach(io: file_2, filename: 'nes.jpeg', content_type: 'image/jpeg')
 user_2.save!
 
 file_3 = URI.open('https://source.unsplash.com/collection/147385')
-user_3 = User.new(email: Faker::Internet.email, password: Faker::Internet.password(min_length: 8), first_name: Faker::Name.first_name , last_name: Faker::Name.last_name )
+user_3 = User.new(email: Faker::Internet.email, password: "123456", first_name: Faker::Name.first_name , last_name: Faker::Name.last_name )
 user_3.profile_picture.attach(io: file_3, filename: 'nes.jpeg', content_type: 'image/jpeg')
 user_3.save!
 
 file_4 = URI.open('https://source.unsplash.com/collection/147385')
-user_4 = User.new(email: Faker::Internet.email, password: Faker::Internet.password(min_length: 8), first_name: Faker::Name.first_name , last_name: Faker::Name.last_name )
+user_4 = User.new(email: Faker::Internet.email, password: "123456", first_name: Faker::Name.first_name , last_name: Faker::Name.last_name )
 user_4.profile_picture.attach(io: file_4, filename: 'nes.jpeg', content_type: 'image/jpeg')
 user_4.save!
 
 file_5 = URI.open('https://source.unsplash.com/collection/147385')
-user_5 = User.new(email: Faker::Internet.email, password: Faker::Internet.password(min_length: 8), first_name: Faker::Name.first_name , last_name: Faker::Name.last_name )
+user_5 = User.new(email: Faker::Internet.email, password: "123456", first_name: Faker::Name.first_name , last_name: Faker::Name.last_name )
 user_5.profile_picture.attach(io: file_5, filename: 'nes.jpeg', content_type: 'image/jpeg')
 user_5.save!
 
