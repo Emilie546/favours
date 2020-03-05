@@ -30,7 +30,7 @@ class PaymentsController < ApplicationController
       receipt_email: current_user.email
     })
 
-    redirect_to root_path
+    redirect_to my_favours_path
   end
 
   private
