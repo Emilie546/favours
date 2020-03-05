@@ -270,6 +270,9 @@ form abbr[title] {
   text-align: center;
 }
 
+.stop-border {
+  border: none
+
 .price-card {
   position: absolute;
   right: 35px;
@@ -315,4 +318,5 @@ form abbr[title] {
 .favour-email-people-card {
   font-size: 0.9rem;
   color: gray;
+
 }
