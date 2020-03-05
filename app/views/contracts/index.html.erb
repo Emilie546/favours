@@ -2,35 +2,44 @@
   <br>
   <br>
   <div class="row status-box">
-    <div class="col-6 status card card-body" style="border-radius: 8px; box-shadow: 0 0 15px rgba(0,0,0,0.2);">
-      <h3><small>Past</small></h3>
+    <div class="col-6 status card card-body stop-border">
+      <h1>Past</h1>
       <br>
       <% @past_contracts.each do |c| %>
-        <div class="card border-0" style="border-radius: 2px; margin-bottom: 12px; box-shadow: 0 0 15px rgba(0,0,0,0.2);">
+        <div class="card border-0" style="border-radius: 2px; margin-bottom: 12px; box-shadow: 1px 2px 3px rgb(236, 236, 236);">
           <div class="row">
-            <div class="col-9 card-body">
-              <p class="card-text pl-2">Task: <%= c.favour.name %></p>
+            <div class="col-12 card-body">
+              <div class="titre-cat">
+                <p class="card-text pl-2">Task: <%= c.favour.name %></p>
+                <div class="pr-2"><%= c.favour.category.icons.html_safe %></div>
+              </div>
               <p class="card-text pl-2"><%= c.favour.description %></p>
-              <p class="card-text pl-2"><%= c.favour.location %></p>
-            </div>
-            <div class="col-3 card-delete">
+              <div class="titre-cat">
+                <p class="card-text pl-2"><i class="fas fa-map-marker-alt"></i>  <%= c.favour.location %></p>
+                <p class="card-text pl-2 pr-2"><i class="far fa-calendar-alt"></i>  <%= c.favour.start_time.strftime("%d.%m.%Y") %></p>
+              </div>
             </div>
           </div>
         </div>
       <% end %>
     </div>
 
-    <div class="col-6 status card card-body" style="border-radius: 8px; box-shadow: 0 0 15px rgba(0,0,0,0.2);">
-      <h3><small>Current</small></h3>
+    <div class="col-6 status card card-body stop-border">
+      <h1>Current</h1>
       <br>
       <% @current_contracts.each do |c| %>
-        <div class="card border-0" style="border-radius: 2px; margin-bottom: 12px; box-shadow: 0 0 15px rgba(0,0,0,0.2);">
+        <div class="card border-0" style="border-radius: 2px; margin-bottom: 12px; box-shadow: 1px 2px 3px rgb(236, 236, 236);">
           <div class="row">
             <div class="col-9 card-body">
-              <p class="card-text pl-2">Task: <%= c.favour.name %></p>
+              <div class="titre-cat">
+                <p class="card-text pl-2">Task: <%= c.favour.name %></p>
+                <div class="pr-2"><%= c.favour.category.icons.html_safe %></div>
+              </div>
               <p class="card-text pl-2"><%= c.favour.description %></p>
-              <p class="card-text pl-2"><%= c.favour.location %></p>
-            </div>
+              <div class="titre-cat">
+                <p class="card-text pl-2"><i class="fas fa-map-marker-alt"></i>  <%= c.favour.location %></p>
+                <p class="card-text pl-2 pr-2"><i class="far fa-calendar-alt"></i>  <%= c.favour.start_time.strftime("%d.%m.%Y") %></p>
+              </div>
             <div class="col-3 card-delete">
               <%= link_to favour_contract_path(c.favour, c),
               method: :delete,
