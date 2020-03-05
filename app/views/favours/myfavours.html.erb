@@ -1,56 +1,68 @@
 <div class="container">
-  
+
   <h1>My favours</h1>
 
   <div class="status mt-5">
 
     <% @favours.each do |f| %>
 
-      <div class="card mb-3" style="width: 100%;">
+      <div class="favours-list">
+      <div class="card favours-card mb-3 w-100">
         <div class="card-body">
-          <h5 class="card-title">
-            <%= f.category.icons.html_safe %>
-            <%= f.name %>
-            <%= link_to edit_favour_path(f) do %>
-              <i class="far fa-edit icone ml-3"></i>
-            <% end %>
-            <%= link_to favour_path(f),
-              method: :delete,
-              data: { confirm: "Are you sure?" } do %>
-                <i class="fas fa-trash-alt icone ml-3"></i>
-              <% end %>
-          </h5>
-          <h6 class="card-subtitle mb-2 text-muted"><%= f.location %></h6>
-          <p class="card-text"><%= f.description %></p>
-          <p class="card-text"><%= f.start_time %></p>
-          <p class="card-text"><%= humanized_money_with_symbol(f.price * 100) %></p>
+          <div class="row">
+            <div class="col-10">
+              <h4 class="card-title mb-4">
+                <%= f.name %>
+                <%= link_to edit_favour_path(f) do %>
+                  <i class="far fa-edit icone-smaller"></i>
+                <% end %>
+                <%= link_to favour_path(f),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } do %>
+                    <i class="fas fa-trash-alt icone-smaller"></i>
+                  <% end %>
+              </h4>
+              <p class="card-text"><%= f.description %></p>
+                <p class="card-text "><i class="far fa-calendar-alt"></i>  <%= f.start_time.strftime("%d.%m.%Y") %></p>
+            </div>
+            <div class="col-2 text-right">
+              <h5 class="card-title category-icone" ><%= f.category.icons.html_safe %></h5>
+              <p class="card-text price-card"><%= humanized_money_with_symbol(f.price * 100) %></p>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div id="people">
-        <p>People interested</p>
-        <% f.contract.each do |c| %>
-          <div class="notification ml-5">
-            <%= profile_picture(c.user) %>
-            <div class="notification-content">
-              <p><small><%= c.user.first_name %> <%= c.user.last_name %></small></p>
-              <p><%= c.user.email %></p>
-            </div>
+      <% if f.contract != [] %>
+        <div id="people" class="pb-3">
+          <p>People interested</p>
 
-            <div>
-              <a><%= link_to accept_path(contract_id: c.id) do %></a>
-                <i class="fas fa-check icone-green mr-4"></i>
-              <% end %>
-              <a><%= link_to refuse_path(contract_id: c.id) do %>
-                <i class="fas fa-times icone-red mr-4"></i></a>
-              <% end %>
-            </div>
+          <div class="row">
+            <% f.contract.each do |c| %>
+              <div class="col-4">
+                <div class="card favour-people-card">
+                  <%= image_tag c.user.profile_picture, class: "avatar-large card-user-picture" %>
+                  <div class="card-body">
+                    <p class="card-title favour-name-people-card"><%= c.user.first_name %> <%= c.user.last_name %></p>
+                    <p class="card-text favour-email-people-card"><%= c.user.email %></p>
+                  </div>
+                  <div class ="check hvr-grow ml-4">
+                    <a><%= link_to accept_path(contract_id: c.id) do %>
+                      <i class="fas fa-check icone-green mr-4"></i></a>
+                    <% end %>
+                    <a><%= link_to refuse_path(contract_id: c.id) do %>
+                      <i class="fas fa-times icone-red mr-4"></i></a>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+            <% end %>
           </div>
-        <% end %>
+
+        </div>
+      <% end %>
       </div>
 
-      <hr class="my-5">
-
     <% end %>
-  </div>
+
 </div>
