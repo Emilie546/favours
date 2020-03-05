@@ -1,2 +1,7 @@
-<h4><%= favour.name %></h4>
-<p><%= humanized_money_with_symbol(favour.price * 100) %></p>
+<div class="info-w">
+  <%= link_to favour_path(favour) do %>
+    <p><%= favour.name %></p>
+    <p><%= favour.start_time.strftime("%d.%m.%Y") %></p>
+  <% end %>
+</div>
+
