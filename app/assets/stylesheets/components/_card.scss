@@ -236,3 +236,50 @@ form abbr[title] {
 .welcome-text {
   text-align: center;
 }
+
+.price-card {
+  position: absolute;
+  right: 35px;
+  bottom: 0;
+  font-size: 1.4rem;
+}
+
+#people {
+  text-align:center;
+}
+
+.favours-list {
+  box-shadow: 1px 2px 3px #CACACA;
+  border-radius: 3px;
+  margin-bottom: 40px;
+}
+
+.favours-card {
+  border: none;
+  background-color: #f9f9f9;
+  height: 230px;
+  padding: 20px;
+}
+
+.card-user-picture {
+  height: 50px;
+  width: 50px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.favour-people-card {
+  border: none;
+}
+
+.favour-name-people-card {
+  font-weight: normal;
+  margin-bottom: 0;
+
+}
+
+.favour-email-people-card {
+  font-size: 0.9rem;
+  color: gray;
+}
