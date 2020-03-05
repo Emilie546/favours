@@ -40,7 +40,7 @@ hugo.profile_picture.attach(io: file_1, filename: 'nes.jpeg', content_type: 'ima
 hugo.save!
 
 file_2 = URI.open('https://images.unsplash.com/photo-1506863530036-1efeddceb993?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1241&q=80')
-georgina = User.new(email: georgina@fav.ch, password: "123456", first_name: 'Georgina' , last_name: 'Chups', location: 'Chemin de la Moraine 12, 1162 Saint-Prex', phone_number: Faker::PhoneNumber.cell_phone )
+georgina = User.new(email: 'georgina@fav.ch', password: "123456", first_name: 'Georgina' , last_name: 'Chups', location: 'Chemin de la Moraine 12, 1162 Saint-Prex', phone_number: Faker::PhoneNumber.cell_phone )
 georgina.profile_picture.attach(io: file_2, filename: 'nes.jpeg', content_type: 'image/jpeg')
 georgina.save!
 
@@ -51,8 +51,8 @@ anais.save!
 
 file_4 = URI.open('https://images.unsplash.com/photo-1463453091185-61582044d556?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80')
 etienne = User.new(email: 'etienne@hotmail.com', password: "123456", first_name: 'Etienne' , last_name: 'Roger', location: 'Quai Jean-Pascal Delamuraz 1, 1006 Lausanne', phone_number: Faker::PhoneNumber.cell_phone )
-user_4.profile_picture.attach(io: file_4, filename: 'nes.jpeg', content_type: 'image/jpeg')
-user_4.save!
+etienne.profile_picture.attach(io: file_4, filename: 'nes.jpeg', content_type: 'image/jpeg')
+etienne.save!
 
 file_5 = URI.open('https://images.unsplash.com/photo-1520785643438-5bf77931f493?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80')
 florian = User.new(email: 'florian.haru@me.com', password: "123456", first_name: 'Florian' , last_name: 'Fleischmann', location: 'Place du Port 7, 1006 Lausanne', phone_number: Faker::PhoneNumber.cell_phone )
@@ -135,7 +135,7 @@ Favour.create!(name: 'Triplets', description: 'Help...', category: kids, user: e
 sleep 1
 Favour.create!(name: 'Bush trimming', description: 'Shrubbery', category: garden, user: james, start_time: Faker::Time.forward, end_time: Faker::Time.forward,  latitude: 46.5104554, longitude: 6.6325265, price_cents: Faker::Number.number(digits: 2))
 sleep 1
-Favour.create!(name: 'Horse - Domino', description: 'Magnificient Stallion', category: hugo, user: user_4, start_time: Faker::Time.forward, end_time: Faker::Time.forward,  latitude: 46.5084833, longitude: 6.4950129, price_cents: Faker::Number.number(digits: 2))
+Favour.create!(name: 'Horse - Domino', description: 'Magnificient Stallion', category: horse, user: hugo, start_time: Faker::Time.forward, end_time: Faker::Time.forward,  latitude: 46.5084833, longitude: 6.4950129, price_cents: Faker::Number.number(digits: 2))
 sleep 1
 Favour.create!(name: 'House sitting while away', description: 'Going on holiday and need someone trustworthy to keep an eye on my house', category: clean, user: kim, start_time: Faker::Time.forward, end_time: Faker::Time.forward,  latitude: 46.4764808, longitude: 6.4425796, price_cents: Faker::Number.number(digits: 2))
 sleep 1
