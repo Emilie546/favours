@@ -1,13 +1,13 @@
 <div class="banner w-100" style="background-image: url(https://images.unsplash.com/photo-1566041510394-cf7c8fe21800?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2434&q=80);">
   <div style="margin-left: auto; margin-right: auto;">
-    <%= image_tag "buildings.png", alt: "alttext",class: "image-clin" %>
+    <%= image_tag "Favours_rond.png", alt: "alttext",class: "image-clin" %>
   </div>
   <div class="arrow bounce">
     <p class="fa fa-arrow-down fa-2x"></p>
   </div>
 </div>
 
-<div class="container">
+<div class="container" id="categ-click">
 
   <div class="categ text-center mt-3" style="background-color: white; border-radius: 5px; width: 100%; margin: 0 auto; min-height: 150px;">
     <div class="container">
@@ -45,57 +45,30 @@
   <div class="row">
     <div class="col-7">
 
-      <div class="welcome">
-        <% if user_signed_in? %>
-          <%if current_user.profile_picture.attached? %>
-            <%= cl_image_tag current_user.profile_picture.key %>
-            <div class="card-welcome-infos">
-              <div class="welcome-text ml-5">
-                <h1>Welcome <%= current_user.first_name %></h1>
-                <p>How would you like to help today?</p>
-              </div>
-            </div>
-          <% else %>
-
-            <div class="card-welcome-infos">
-              <div class="welcome-text ml-5">
-                <h1>Welcome <%= current_user.first_name %></h1>
-                <p>How would you like to help today?</p>
-              </div>
-            </div>
-          <% end %>
-        <% else %>
-          <%= image_tag "Favours.png" %>
-          <div class="card-welcome-infos">
-            <div class="welcome-text ml-5">
-              <h1>Welcome</h1>
-              <p>How would you like to help today?</p>
-              <%= link_to 'Sign up', new_user_session_path, class: 'btn btn-outline-primary'  %>
-            </div>
-          </div>
-        <% end %>
-
-      </div>
-
-      <div class="cards">
+      <div class="row cards mt-3">
         <% @favours.each do |f| %>
-          <%= link_to favour_path(f) do %>
-          <div class="card-index hvr-grow">
-            <div class="row">
-              <div class="col-6">
-                <h5><%= f.name %></h5>
-                <p><%= f.category.icons.html_safe %></p>
-              </div>
-              <div class="col-6 text-right">
-                <p><%= humanized_money_with_symbol(f.price * 100) %></p>
-                <p><%= f.start_time.strftime("%d.%m.%Y") %></p>
+          <%= link_to favour_path(f), class: 'col-6' do %>
+            <div class="card shadow hvr-grow mb-4">
+              <div class="card-body">
+                <div class="row border-t">
+                  <h5 class="col-10 card-title text-center"><%= f.name %></h5>
+                  <h6 class=" col-2 text-right card-subtitle"><%= f.category.icons.html_safe %></h6>
+                </div>
+                <div class="mt-3">
+                  <p class="card-text ml-2"><i class="far fa-calendar-alt"></i>  <%= f.start_time.strftime("%d.%m.%Y") %></p>
+                  <p class="card-text ml-2"><i class="far fa-clock"></i>  <%= f.start_time.strftime("%H.%M.%p") %></p>
+                  <p class="card-text card-des text-muted ml-2"><%= f.description %></p>
+                  <p class="card-text text-right ml-2">&#128181;</i>  <%= humanized_money_with_symbol(f.price * 100) %></p>
+                </div>
               </div>
             </div>
-          </div>
           <% end %>
         <% end %>
+
+
       </div>
     </div>
+
 
     <div class="col-5 pl-0 map-container"
       id="map"
