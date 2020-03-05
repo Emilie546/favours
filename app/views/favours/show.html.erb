@@ -1,44 +1,53 @@
 <div class="container">
-  <div class="title">
-    <br><br>
-    <h1 class="text-center mt-3"><%= @favour.name %></h1>
-  </div>
-  <div class="row flex-display" style="padding-left:15px; padding-right: 15px;">
 
-    <div class="col-6 favour-show-card">
-      <div class="row p-3">
-        <div class="col-6">
-          <p><%= @favour.location %></p>
-          <p><%= @favour.description %></p>
-          <h5>Accept <%= @favour.name %></h5>
-        </div>
-        <div class="col-6">
-          <p class = "price text-right"><%= humanized_money_with_symbol(@favour.price * 100) %></p>
-          <%= render 'contracts/new', favour: @favour, contract: @contract %>
-        </div>
-      </div>
+  <div class="show-favour p-4">
+    <div class="title">
+      <h1 class="text-center mt-1"><%= @favour.name %></h1>
     </div>
-
-    <div class="col-5 p-0 user-favour-card">
-      <%= profile_picture(@user) %>
-      <div class="card-user-infos p-3">
-        <h5><%= @user.first_name %></h5>
-        <p><%= @user.last_name %></p>
-        <p><%= @user.email %></p>
-        <p><%= @user.location %></p>
-        <p><%= @user.phone_number %></p>
+    <div class="show-favour-info mt-4 row">
+      <div class="col-10">
+        <p><i class="far fa-compass"></i>  <%= @favour.location %></p>
+        <p><i class="fas fa-search"></i>  <%= @favour.description %></p>
+        <p><i class="far fa-calendar-alt"></i>  <%= @favour.start_time.strftime("%d.%m.%Y") %></p>
+        <p><i class="far fa-clock"></i>  <%= @favour.start_time.strftime("%H.%M.%p") %>  -  <i class="far fa-clock"></i>  <%= @favour.end_time.strftime("%H.%M.%p") %></p>
+      </div>
+      <div class="col-2">
+        <p class = "show-price">&#128181;  <%= humanized_money_with_symbol(@favour.price * 100) %></p>
+        <div class="accept">
+         <%= render 'contracts/new', favour: @favour, contract: @contract %>
+        </div>
       </div>
     </div>
 
   </div>
 
-  <div
-    class="map-show-card mb-5"
-    id="map"
-    style="width: 100%;
-    height: 500px;"
-    data-page="show"
-    data-markers="[<%= @marker.to_json %>]"
-    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-  ></div>
+  <div class="row show-flex">
+    <div class="col-5 user-favour-card">
+      <div class="row">
+        <div class="col-4">
+          <div class="avatar-owner">
+            <%= profile_picture(@user) %>
+          </div>
+        </div>
+        <div class=" col-8 card-user-infos p-3">
+          <h5><%= @user.first_name %><%= @user.last_name %></h5>
+        </div>
+      </div>
+      <p class="ml-2 mt-3"><i class="far fa-envelope"></i>  <%= @user.email %></p>
+      <p class="ml-2"><i class="far fa-compass"></i>  <%= @user.location %></p>
+      <p class="ml-2"><i class="fas fa-phone"></i>  <%= @user.phone_number %></p>
+    </div>
+
+
+
+    <div
+      class=" col-6 map-show-card mb-5"
+      id="map"
+      style="width: 100%;
+      height: 500px;"
+      data-page="show"
+      data-markers="[<%= @marker.to_json %>]"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+    ></div>
+  </div>
 </div>

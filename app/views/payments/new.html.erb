@@ -1,57 +1,35 @@
 <div class="container">
-  <div class="row mt-3 form-white">
+  <div class="form-outline">
 
-    <div class="col-6 col-pay">
-      <h2 class="text-center mt-3 mb-4">Invoice <i class="fas fa-lock lock ml-3"></i></h2>
-      <div class="img-center mb-5">
-        <img src="http://i76.imgup.net/accepted_c22e0.png">
-      </div>
-      <h3 class="mb-5"><small>Payment amount : <%= @favour.price_cents %> CHF</small></h3>
-      <%= simple_form_for [@favour, @payment] do |f| %>
-        <%= f.input :name, placeholder: 'Name' %>
-        <%= f.input :card_number, placeholder: 'Card number' %>
 
-        <div class="pay">
-          <div class="float exp" >
-            <%= f.label 'Expiration date *' %>
-            <div style="float:left; width:48%" class="col-6 pl-0">
-              <%= f.input :exp_month, label: false, collection: ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'], prompt: 'Month expiration of you card' %>
-            </div>
-            <div style="float:right; width:48%" class="col-6">
-              <%= f.input :exp_year, label: false, collection: Time.zone.now.year..Time.zone.now.year + 8, prompt: 'Year expiration of you card' %>
-            </div>
-          </div>
-          <div class="text-left" >
-            <%= f.input :cvc, label: 'CVC', placeholder: '3 number code' %>
-          </div>
-        </div>
-
-        <div class="img-center mb-3">
-        <%= f.submit 'Confirm payment', class: 'btn btn-success btn-sm text-white mt-4 px-4 mb-4' %>
-        </div>
-      <% end %>
-      </div>
-
-    <div class="col-6 cards col-pay pt-5 pr-5 pl-5">
-      <div class="card-payment">
-        <div class="col-6 ml-0 mb-4" style="padding-left: 0;">
-          <h3>Your order</h3>
-        </div>
-        <div class="row">
-          <div class="col-6 mb-4">
-            <h5><%= @favour.name %></h5>
-            <br>
-            <p>Start on: <%= @favour.start_time.strftime("%d.%m.%Y") %></p>
-          </div>
-          <div class="col-6 text-right shopping-cart">
-            <i class="fas fa-shopping-cart shopping mt-0"></i>
-            <p><%= @favour.price_cents %> CHF</p>
-          </div>
-        </div>
-      </div>
+    <h2 class="text-center mt-3 mb-4">Invoice <i class="fas fa-lock lock ml-3"></i></h2>
+    <div class="img-center mb-5">
+      <img src="http://i76.imgup.net/accepted_c22e0.png">
     </div>
+    <h3 class="mb-5"><small>Payment amount : <%= @favour.price_cents %> CHF</small></h3>
+    <%= simple_form_for [@favour, @payment] do |f| %>
+      <%= f.input :name, placeholder: 'Name' %>
+      <%= f.input :card_number, placeholder: 'Card number' %>
 
+      <div class="pay">
+        <div class="float exp" >
+          <%= f.label 'Expiration date *' %>
+          <div style="float:left; width:48%" class="col-6 pl-0">
+            <%= f.input :exp_month, label: false, collection: ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'], prompt: 'Month expiration of you card' %>
+          </div>
+          <div style="float:right; width:48%" class="col-6">
+            <%= f.input :exp_year, label: false, collection: Time.zone.now.year..Time.zone.now.year + 8, prompt: 'Year expiration of you card' %>
+          </div>
+        </div>
+        <div class="text-left" >
+          <%= f.input :cvc, label: 'CVC', placeholder: '3 number code' %>
+        </div>
+      </div>
 
+      <div class="mt-3 mb-3">
+      <%= f.submit 'Confirm payment', class: 'btn btn-outline-success' %>
+      </div>
+    <% end %>
   </div>
 </div>
 
