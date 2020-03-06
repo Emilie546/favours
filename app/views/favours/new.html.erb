@@ -12,7 +12,7 @@
       <%= f.input :name, class: 'form-control', placeholder: 'Lawn Mowing' %>
     </div>
     <div class="form-group">
-      <%= f.input :description, class: 'form-control', placeholder: 'I need someone to help with my garden as soon as possible! Two hour job, maximum and I will offer cookies and refreshments!' %>
+      <%= f.input :description, class: 'form-control', placeholder: 'I need someone to help with my garden as soon as possible! I will offer cookies and refreshments!' %>
     </div>
     <div class="form-group">
       <%= f.association :category, class: 'form-control', prompt: 'Select a category' %>
@@ -24,17 +24,17 @@
       <%= f.input :price_cents, label: 'Price', class: 'form-control', input_html: {value: ''} %>
     </div>
     <div class="form-group mb-3">
-      <%= f.input :start_time, label: 'Date', as: :date, html5: true, class: 'form-control', placeholder: "DD/MM/YYYY" %>
+      <%= f.input :start_time, label: 'Date', as: :date, html5: true, class: 'form-control', input_html: {value: 'DD.MM.YYYY'} %>
     </div>
     <div class="form-group mb-3">
-      <%= f.input :start_time, as: :time, class: 'form-control', placeholder: "hh:mm" %>
+      <%= f.input :start_time, as: :time, minute_step: 15, class: 'form-control', input_html: {placeholder: Time.now} %>
     </div>
      <div class="form-group mb-3">
-      <%= f.input :end_time, as: :time, class: 'form-control', placeholder: "hh:mm" %>
+      <%= f.input :end_time, as: :time, minute_step: 15, class: 'form-control', input_html: {placeholder: Time.now} %>
     </div>
 
     <div class="mt-4 flex-btns">
-      <%= f.submit 'Post', class: 'btn btn-outline-success' %>
+      <%= f.submit 'Create', class: 'btn btn-outline-success' %>
     </div>
     <% end %>
   </div>
