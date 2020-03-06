@@ -40,8 +40,13 @@
           <div class="row">
             <% f.contract.each do |c| %>
               <div class="col-4">
-                <div class="card favour-people-card">
-                  <%= image_tag c.user.profile_picture, class: "avatar-large card-user-picture" %>
+                <div class="card favour-people-card 
+                  <%= if c.accept_at != nil
+                        "border border-success hugo-shadow"
+                      else
+                        "bg-white"
+                      end %>">
+                  <%= image_tag c.user.profile_picture, class: "avatar-large card-user-picture mt-2" %>
                   <div class="card-body">
                     <p class="card-title favour-name-people-card"><%= c.user.first_name %> <%= c.user.last_name %></p>
                     <p class="card-text favour-email-people-card"><%= c.user.email %></p>
