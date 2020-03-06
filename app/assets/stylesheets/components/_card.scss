@@ -285,14 +285,14 @@ form abbr[title] {
 }
 
 .favours-list {
-  box-shadow: 1px 2px 3px #CACACA;
+  box-shadow: 1px 2px 3px #1edd881f;
   border-radius: 3px;
   margin-bottom: 40px;
 }
 
 .favours-card {
   border: none;
-  background-color: #f9f9f9;
+  background-color: #1edd881f;
   height: 230px;
   padding: 20px;
 }
@@ -319,4 +319,8 @@ form abbr[title] {
   font-size: 0.9rem;
   color: gray;
 
+}
+
+.hugo-shadow {
+  box-shadow: 1px 2px 3px #cacaca;
 }
