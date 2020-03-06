@@ -29,47 +29,47 @@ puts 'Creating users...'
 # user_4 = User.new(email: Faker::Internet.email, password: Faker::Internet.password(min_length: 8), first_name: Faker::Name.first_name , last_name: Faker::Name.last_name )
 # user_4 = User.new(email: Faker::Internet.email, password: Faker::Internet.password(min_length: 8), first_name: Faker::Name.first_name , last_name: Faker::Name.last_name )
 
-file = URI.open('https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80')
+file = URI.open('https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80/900x900')
 emilie = User.new(email: 'emilie@favours.com', password: "123456", first_name: 'Emilie' , last_name: 'Keller', location: 'N/A', phone_number: Faker::PhoneNumber.cell_phone )
 emilie.profile_picture.attach(io: file, filename: 'nes.jpeg', content_type: 'image/jpeg')
 emilie.save!
 
-file_1 = URI.open('https://images.unsplash.com/photo-1505503693641-1926193e8d57?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80')
+file_1 = URI.open('https://images.unsplash.com/photo-1505503693641-1926193e8d57?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80/900x900')
 hugo = User.new(email: 'hugo.mori@outlook.com', password: "123456", first_name: 'Hugo' , last_name: 'Mori', location: 'Route du Jorat 82, 1000 Lausanne 26', phone_number: Faker::PhoneNumber.cell_phone )
 hugo.profile_picture.attach(io: file_1, filename: 'nes.jpeg', content_type: 'image/jpeg')
 hugo.save!
 
-file_2 = URI.open('https://images.unsplash.com/photo-1506863530036-1efeddceb993?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1241&q=80')
+file_2 = URI.open('https://images.unsplash.com/photo-1506863530036-1efeddceb993?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1241&q=80/900x900')
 georgina = User.new(email: 'georgina@fav.ch', password: "123456", first_name: 'Georgina' , last_name: 'Chups', location: 'Chemin de la Moraine 12, 1162 Saint-Prex', phone_number: Faker::PhoneNumber.cell_phone )
 georgina.profile_picture.attach(io: file_2, filename: 'nes.jpeg', content_type: 'image/jpeg')
 georgina.save!
 
-file_3 = URI.open('https://images.unsplash.com/photo-1526080652727-5b77f74eacd2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1355&q=80')
+file_3 = URI.open('https://images.unsplash.com/photo-1526080652727-5b77f74eacd2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1355&q=80/900x900')
 anais = User.new(email: 'anais@me.com', password: "123456", first_name: 'Anais' , last_name: 'Minal', location: 'Rue Marterey 29, 1005 Lausanne', phone_number: Faker::PhoneNumber.cell_phone )
 anais.profile_picture.attach(io: file_3, filename: 'nes.jpeg', content_type: 'image/jpeg')
 anais.save!
 
-file_4 = URI.open('https://images.unsplash.com/photo-1463453091185-61582044d556?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80')
+file_4 = URI.open('https://images.unsplash.com/photo-1463453091185-61582044d556?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80/900x900')
 etienne = User.new(email: 'etienne@hotmail.com', password: "123456", first_name: 'Etienne' , last_name: 'Roger', location: 'Quai Jean-Pascal Delamuraz 1, 1006 Lausanne', phone_number: Faker::PhoneNumber.cell_phone )
 etienne.profile_picture.attach(io: file_4, filename: 'nes.jpeg', content_type: 'image/jpeg')
 etienne.save!
 
-file_5 = URI.open('https://images.unsplash.com/photo-1520785643438-5bf77931f493?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80')
+file_5 = URI.open('https://images.unsplash.com/photo-1520785643438-5bf77931f493?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80/900x900')
 florian = User.new(email: 'florian.haru@me.com', password: "123456", first_name: 'Florian' , last_name: 'Fleischmann', location: 'Place du Port 7, 1006 Lausanne', phone_number: Faker::PhoneNumber.cell_phone )
 florian.profile_picture.attach(io: file_5, filename: 'nes.jpeg', content_type: 'image/jpeg')
 florian.save!
 
-file_6 = URI.open('https://images.unsplash.com/photo-1520998116484-6eeb2f72b5b9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60')
+file_6 = URI.open('https://images.unsplash.com/photo-1520998116484-6eeb2f72b5b9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60/900x900')
 justine = User.new(email: 'justine.del@hotmail.com', password: "123456", first_name: 'Justine' , last_name: 'De la Cour', location: 'Rue de Genève 23, 1003 Lausanne', phone_number: Faker::PhoneNumber.cell_phone )
 justine.profile_picture.attach(io: file_6, filename: 'nes.jpeg', content_type: 'image/jpeg')
 justine.save!
 
-file_7 = URI.open('https://images.unsplash.com/photo-1525545073321-a0c3bc5f4c1b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80')
+file_7 = URI.open('https://images.unsplash.com/photo-1525545073321-a0c3bc5f4c1b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80/900x900')
 kim = User.new(email: 'kim@k.ch', password: "123456", first_name: 'Kim' , last_name: 'Kardashian', location: 'Rue de Crissier 4b, 1020 Renens', phone_number: Faker::PhoneNumber.cell_phone )
 kim.profile_picture.attach(io: file_7, filename: 'nes.jpeg', content_type: 'image/jpeg')
 kim.save!
 
-file_8 = URI.open('https://images.unsplash.com/photo-1534399315465-2b91232de345?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60')
+file_8 = URI.open('https://images.unsplash.com/photo-1534399315465-2b91232de345?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60/900x900')
 james = User.new(email: 'james@yahoo.com', password: "123456", first_name: 'James' , last_name: 'Bond', location: 'Place du Sauget 8, 1026 Echandens', phone_number: Faker::PhoneNumber.cell_phone )
 james.profile_picture.attach(io: file_8, filename: 'nes.jpeg', content_type: 'image/jpeg')
 james.save!

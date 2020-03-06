@@ -5,7 +5,12 @@ class FavoursController < ApplicationController
     # Vue de toute les Favours sur le marcher, visible de tout le monde... (C'est notre pages d'accueil)
     @categories = Category.all
     @favours = Favour.geocoded #.left_outer_joins(:contract).where("contracts.id IS NULL") #.left_outer_joins(:contract).where("contracts.id IS NULL"), permet d'afficher toute les favours qui non pas de contracts
-    @favours = @favours.where(category_id: params[:category]) if params[:category].present?
+    if params[:category].present?
+      @favours = @favours.where(category_id: params[:category])
+      # redirect_to "/favours?category=#{params[:category]}#categ-click"
+    else
+      @favours = @favours.all
+    end
 
     @markers = @favours.map do |favour|
       {
