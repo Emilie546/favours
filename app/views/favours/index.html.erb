@@ -17,7 +17,7 @@
       <div class="categ-icons row" style="margin-top: 30px; display:flex; align-items:center;">
         <% @categories.each do |cat| %>
           <div class="col-1 hvr-grow" style="font-size: 30px;">
-            <%= link_to cat.icons.html_safe, favours_path(category: cat.id), title: cat.name %>
+            <%= link_to cat.icons.html_safe, favours_path(category: cat.id, anchor: "categ-click"), title: cat.name %>
           </div>
         <% end %>
       </div>
