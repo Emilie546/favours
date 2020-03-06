@@ -35,7 +35,7 @@ emilie.profile_picture.attach(io: file, filename: 'nes.jpeg', content_type: 'ima
 emilie.save!
 
 file_1 = URI.open('https://images.unsplash.com/photo-1505503693641-1926193e8d57?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80/900x900')
-hugo = User.new(email: 'hugo.mori@outlook.com', password: "123456", first_name: 'Hugo' , last_name: 'Mori', location: 'Route du Jorat 82, 1000 Lausanne 26', phone_number: 33786616612 )
+hugo = User.new(email: 'hugo.mori@outlook.com', password: "123456", first_name: 'Hugo' , last_name: 'Mori', location: 'Route du Jorat 82, 1000 Lausanne 26', phone_number: 786616612 )
 hugo.profile_picture.attach(io: file_1, filename: 'nes.jpeg', content_type: 'image/jpeg')
 hugo.save!
 
@@ -55,7 +55,7 @@ etienne.profile_picture.attach(io: file_4, filename: 'nes.jpeg', content_type: '
 etienne.save!
 
 file_5 = URI.open('https://images.unsplash.com/photo-1520785643438-5bf77931f493?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80/900x900')
-florian = User.new(email: 'florian.haru@me.com', password: "123456", first_name: 'Florian' , last_name: 'Fleischmann', location: 'Place du Port 7, 1006 Lausanne', phone_number: 33624585878 )
+florian = User.new(email: 'florian.haru@me.com', password: "123456", first_name: 'Florian' , last_name: 'Fleischmann', location: 'Place du Port 7, 1006 Lausanne', phone_number: 624585878 )
 florian.profile_picture.attach(io: file_5, filename: 'nes.jpeg', content_type: 'image/jpeg')
 florian.save!
 
