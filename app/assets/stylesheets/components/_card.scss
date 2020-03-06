@@ -7,6 +7,7 @@
   margin-bottom: 16px;
 }
 
+
 .shadow {
   color: black;
   width: 18rem;
@@ -339,9 +340,12 @@ form abbr[title] {
 .cancel-contract p {
   margin-right: 30px;
   text-decoration: none;
-  }
+}
 
-p :hover {
-  color: black;
+.cancel-contract {
   text-decoration: none;
+  color: black;
+  &:hover {
+    text-decoration: none;
+  }
 }
