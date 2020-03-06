@@ -12,14 +12,14 @@ class ContractsController < ApplicationController
     # Permet d'update uniquement la colonne Accept_at, et de lui mettre la date actuelle
     @contract = Contract.find(params[:contract_id])
     @contract.update(accept_at: DateTime.now)
-    redirect_to root_path
+    redirect_to my_favours_path
   end
 
   def refuse
     # Permet d'update uniquement la colonne refuse_at, et de lui mettre la date actuelle
     @contract = Contract.find(params[:contract_id])
     @contract.update(refuse_at: DateTime.now)
-    redirect_to root_path
+    redirect_to my_favours_path
   end
 
   def new
