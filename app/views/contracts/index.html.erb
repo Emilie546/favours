@@ -1,51 +1,56 @@
 <div class="container">
-  <br>
-  <br>
+
   <div class="row status-box">
     <div class="col-6 status card card-body stop-border">
-      <h1>Past</h1>
-      <br>
+      <h1 class= "past-contract">Past</h1>
       <% @past_contracts.each do |c| %>
-        <div class="card border-0" style="border-radius: 2px; margin-bottom: 12px; box-shadow: 1px 2px 3px rgb(236, 236, 236);">
+        <div class="card border-0 card-contract">
           <div class="row">
-            <div class="col-12 card-body">
-              <div class="titre-cat">
-                <p class="card-text pl-2">Task: <%= c.favour.name %></p>
-                <div class="pr-2"><%= c.favour.category.icons.html_safe %></div>
-              </div>
-              <p class="card-text pl-2"><%= c.favour.description %></p>
-              <div class="titre-cat">
-                <p class="card-text pl-2"><i class="fas fa-map-marker-alt"></i>  <%= c.favour.location %></p>
-                <p class="card-text pl-2 pr-2"><i class="far fa-calendar-alt"></i>  <%= c.favour.start_time.strftime("%d.%m.%Y") %></p>
-              </div>
+             <div class="col-8">
+              <h4 class="card-title mb-4">
+                <%= c.favour.name %>
+              </h4>
+              <p class="card-text pl-2"><i class="fas fa-map-marker-alt"></i>  <%= c.favour.location %></p>
+              <p class="card-text"><%= c.favour.description %></p>
+
+            </div>
+            <div class="col-4 text-right">
+              <h5 class="card-title category-icone mr-5" ><%= c.favour.category.icons.html_safe  %></h5>
+              <p class="card-text mr-3 "><i class="far fa-calendar-alt"></i>  <%= c.favour.start_time.strftime("%d.%m.%Y")  %></p>
+              <%= link_to favour_contract_path(c.favour, c),
+                method: :delete,
+                data: { confirm: "Are you sure?" } do %>
+                  <p class="cancel-contract mr-4">Cancel</p>
+                <% end %>
             </div>
           </div>
         </div>
       <% end %>
     </div>
 
+
+
     <div class="col-6 status card card-body stop-border">
-      <h1>Current</h1>
-      <br>
+      <h1 class= "past-contract">Current</h1>
       <% @current_contracts.each do |c| %>
-        <div class="card border-0" style="border-radius: 2px; margin-bottom: 12px; box-shadow: 1px 2px 3px rgb(236, 236, 236);">
+        <div class="card border-0 card-contract">
           <div class="row">
-            <div class="col-9 card-body">
-              <div class="titre-cat">
-                <p class="card-text pl-2">Task: <%= c.favour.name %></p>
-                <div class="pr-2"><%= c.favour.category.icons.html_safe %></div>
-              </div>
-              <p class="card-text pl-2"><%= c.favour.description %></p>
-              <div class="titre-cat">
-                <p class="card-text pl-2"><i class="fas fa-map-marker-alt"></i>  <%= c.favour.location %></p>
-                <p class="card-text pl-2 pr-2"><i class="far fa-calendar-alt"></i>  <%= c.favour.start_time.strftime("%d.%m.%Y") %></p>
-              </div>
-            <div class="col-3 card-delete">
+             <div class="col-8">
+              <h4 class="card-title mb-4">
+                <%= c.favour.name %>
+              </h4>
+              <p class="card-text pl-2"><i class="fas fa-map-marker-alt"></i>  <%= c.favour.location %></p>
+              <p class="card-text"><%= c.favour.description %></p>
+
+            </div>
+            <div class="col-4 text-right">
+              <h5 class="card-title category-icone mr-5" ><%= c.favour.category.icons.html_safe  %></h5>
+              <p class="card-text mr-3 "><i class="far fa-calendar-alt"></i>  <%= c.favour.start_time.strftime("%d.%m.%Y")  %></p>
               <%= link_to favour_contract_path(c.favour, c),
-              method: :delete,
-              data: { confirm: "Are you sure?" } do %>
-                <p>Cancel</p>
-              <% end %>
+                method: :delete,
+                data: { confirm: "Are you sure?" } do %>
+                  <p class="cancel-contract mr-4">Cancel</p>
+                <% end %>
             </div>
           </div>
         </div>
